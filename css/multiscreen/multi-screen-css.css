@@ -5,17 +5,10 @@
  */
 
 .ms-container {
-	position: absolute;
+	position: fixed;
 	z-index: 1;
 	display: none;
 }
-
-.ms-center {
-	position: absolute;
-	z-index: 1;
-	display: block;
-}
-
 .ms-default {
 	position: absolute;
 	z-index: 2;

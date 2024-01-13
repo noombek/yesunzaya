@@ -4,7 +4,7 @@
  * @license MIT License <http://opensource.org/licenses/MIT>
  */
 
-var MultiScreen = (function() {
+var MultiScreen = (function () {
 
 	/**
 	 * screens
@@ -28,7 +28,7 @@ var MultiScreen = (function() {
 	 * default_enter_animation
 	 * Command for the default enter animation
 	 */
-	var default_enter_animation; 
+	var default_enter_animation;
 
 	/**
 	 * default_exit_animation
@@ -40,7 +40,7 @@ var MultiScreen = (function() {
 	 * default_enter_time
 	 * Command for the default enter animation time
 	 */
-	var default_enter_time; 
+	var default_enter_time;
 
 	/**
 	 * default_exit_time
@@ -82,48 +82,48 @@ var MultiScreen = (function() {
 	 * valid_commands
 	 * List of all valid animation commands
 	 */
-	var valid_commands = [	'fade', 
-							'fadetop', 
-							'fadetopright', 
-							'faderight', 
-							'fadebottomright', 
-							'fadebottom', 
-							'fadebottomleft', 
-							'fadeleft', 
-							'fadetopleft', 
-							'top', 
-							'topright', 
-							'right', 
-							'bottomright', 
-							'bottom', 
-							'bottomleft', 
-							'left', 
-							'topleft' ];
+	var valid_commands = ['fade',
+		'fadetop',
+		'fadetopright',
+		'faderight',
+		'fadebottomright',
+		'fadebottom',
+		'fadebottomleft',
+		'fadeleft',
+		'fadetopleft',
+		'top',
+		'topright',
+		'right',
+		'bottomright',
+		'bottom',
+		'bottomleft',
+		'left',
+		'topleft'];
 
 	/**
 	 * init()
 	 * Initializes the plugin
 	 * @param {Object} options may contain default settings (optional)
 	 */
-	var init = function(options) {
+	var init = function (options) {
 
 		// all multi-screen.js screens
-		var ms_screens = $('div.ms-container, div.ms-center');
+		var ms_screens = $('div.ms-container');
 
 		// run plugin only if at least two screens
 		if (ms_screens.length > 1) {
 
 			// check for default screen
 			var default_screen = $('div.ms-container.ms-default');
-			
+
 			// if no default screen specified
 			if (default_screen.length === 0) {
-				
+
 				// use top container, give it the ms-default class
 				default_screen = $(ms_screens[0]);
 				default_screen.toggleClass('ms-default');
-			
-			// if more than one default	
+
+				// if more than one default	
 			} else if (default_screen.length > 1) {
 
 				// use top default, remove the ms-default class from the others
@@ -145,7 +145,7 @@ var MultiScreen = (function() {
 			lock_navigation = false;
 			animation_queue = false;
 			activate_links();
-			
+
 		}
 
 	};
@@ -154,28 +154,30 @@ var MultiScreen = (function() {
 	 * activate_links() 
 	 * Attaches on-click event to all .ms-nav-links which takes the target screen and transition attributes and performs the switch
 	 */
-	var activate_links = function() {
+	var activate_links = function () {
 
 		// attach to all ms-nav-link elements
-		$('.ms-nav-link').click(function(node) {
+		$('.ms-nav-link').click(function (node) {
 
 			// grab the node that was clicked on containing all the information
 			var link = $(node.target);
 
 			// call the switch function with the animation specifics
-			switch_screens({	target_id: link.attr('data-ms-target'),
-								animation_command: link.attr('data-ms-animation'), 
-								enter_animation_command: link.attr('data-ms-enter-animation'),
-								exit_animation_command: link.attr('data-ms-exit-animation'),
-								animation_time: link.attr('data-ms-time'),
-								enter_animation_time: link.attr('data-ms-enter-time'),
-								exit_animation_time: link.attr('data-ms-exit-time'),
-								delay: link.attr('data-ms-delay'),
-								distance: link.attr('data-ms-distance'),
-								vertical_distance: link.attr('data-ms-vertical-distance'),
-								horizontal_distance: link.attr('data-ms-horizontal-distance'),
-								scroll_time: link.attr('data-ms-scroll-time')});
-		
+			switch_screens({
+				target_id: link.attr('data-ms-target'),
+				animation_command: link.attr('data-ms-animation'),
+				enter_animation_command: link.attr('data-ms-enter-animation'),
+				exit_animation_command: link.attr('data-ms-exit-animation'),
+				animation_time: link.attr('data-ms-time'),
+				enter_animation_time: link.attr('data-ms-enter-time'),
+				exit_animation_time: link.attr('data-ms-exit-time'),
+				delay: link.attr('data-ms-delay'),
+				distance: link.attr('data-ms-distance'),
+				vertical_distance: link.attr('data-ms-vertical-distance'),
+				horizontal_distance: link.attr('data-ms-horizontal-distance'),
+				scroll_time: link.attr('data-ms-scroll-time')
+			});
+
 		});
 
 	};
@@ -225,49 +227,49 @@ var MultiScreen = (function() {
 				if ($(document).scrollTop() > 0) {
 
 					// scroll it to the top (for smoother screen switch animation)
-					$('body').animate({scrollTop: 0}, get_switch_time(options.scroll_time, 'scroll'), function() {
+					$('body').animate({ scrollTop: 0 }, get_switch_time(options.scroll_time, 'scroll'), function () {
 
 						// then run the animation on completion
-						run_animation(	current, 
-										target, 
-										options.enter_animation_command, 
-										options.enter_animation_time, 
-										options.exit_animation_command, 
-										options.exit_animation_time, 
-										options.delay, 
-										options.vertical_distance, 
-										options.horizontal_distance);
+						run_animation(current,
+							target,
+							options.enter_animation_command,
+							options.enter_animation_time,
+							options.exit_animation_command,
+							options.exit_animation_time,
+							options.delay,
+							options.vertical_distance,
+							options.horizontal_distance);
 
 					});
 
-				// at the top already, so animate without scrolling first
+					// at the top already, so animate without scrolling first
 				} else {
 
-					run_animation(	current, 
-									target, 
-									options.enter_animation_command, 
-									options.enter_animation_time, 
-									options.exit_animation_command, 
-									options.exit_animation_time, 
-									options.delay, 
-									options.vertical_distance, 
-									options.horizontal_distance);
+					run_animation(current,
+						target,
+						options.enter_animation_command,
+						options.enter_animation_time,
+						options.exit_animation_command,
+						options.exit_animation_time,
+						options.delay,
+						options.vertical_distance,
+						options.horizontal_distance);
 
 				}
 
 				return true;
 
 
-			// undefined target or equal to current screen
+				// undefined target or equal to current screen
 			} else {
-			
+
 				lock_navigation = false;
 				return false;
-				
+
 			}
 
 
-		// already busy
+			// already busy
 		} else {
 
 			return false;
@@ -287,13 +289,13 @@ var MultiScreen = (function() {
 
 		// if the input is valid
 		if (check_int(time_str) && time_str >= 0) {
-			
+
 			// return int value of input
 			return parseInt(time_str);
-		
-		// invalid input, use default
+
+			// invalid input, use default
 		} else {
-		
+
 			// return default by type if valid
 			if (type === 'enter' || type === 'exit' || type === 'scroll') {
 
@@ -304,7 +306,7 @@ var MultiScreen = (function() {
 				return false;
 
 			}
-		
+
 		}
 
 	};
@@ -319,14 +321,14 @@ var MultiScreen = (function() {
 		screens = new Object();
 
 		// for each screen, store if it has a valid id 
-		$(screens_to_store).each(function() {
+		$(screens_to_store).each(function () {
 
 			if (typeof $(this).attr('id') !== 'undefined') {
-		
+
 				screens[$(this).attr('id')] = this;
 
 			}
-		
+
 		});
 
 	};
@@ -341,13 +343,13 @@ var MultiScreen = (function() {
 
 		// return the screen if the id is not empty and the by that id screen exists, false otherwise
 		if (typeof id !== 'undefined' && id in screens) {
-			
+
 			return $(screens[id]);
-			
+
 		} else {
-		
+
 			return false;
-		
+
 		}
 
 	};
@@ -408,7 +410,7 @@ var MultiScreen = (function() {
 		if (delay) {
 
 			animate_current(current, current_css, exit_time_str, true, target, target_css, enter_time_str);
-			
+
 		} else {
 
 			animate_current(current, current_css, exit_time_str, false);
@@ -432,8 +434,8 @@ var MultiScreen = (function() {
 	var animate_current = function (current, current_css, exit_time_str, delay, target, target_css, enter_time_str) {
 
 		// apply pre_css, animate with animate_css and the input time
-		current.css(current_css.pre_css).animate(current_css.animate_css, get_switch_time(exit_time_str, 'exit'), function() {
-			
+		current.css(current_css.pre_css).animate(current_css.animate_css, get_switch_time(exit_time_str, 'exit'), function () {
+
 			// apply post_css on completion
 			current.css(current_css.post_css);
 
@@ -443,7 +445,7 @@ var MultiScreen = (function() {
 				animate_target(target, target_css, enter_time_str);
 
 			}
-		
+
 		});
 
 	};
@@ -458,8 +460,8 @@ var MultiScreen = (function() {
 	var animate_target = function (target, target_css, enter_time_str) {
 
 		// apply pre_css, animate with animate_css and the input time
-		target.css(target_css.pre_css).animate(target_css.animate_css, get_switch_time(enter_time_str, 'enter'), function() {
-			
+		target.css(target_css.pre_css).animate(target_css.animate_css, get_switch_time(enter_time_str, 'enter'), function () {
+
 			// apply post_css on completion and open up the navigation
 			target.css(target_css.post_css);
 			lock_navigation = false;
@@ -473,7 +475,7 @@ var MultiScreen = (function() {
 				switch_screens(chain_object);
 
 			}
-			
+
 		});
 
 	};
@@ -518,8 +520,10 @@ var MultiScreen = (function() {
 
 		}
 
-		return {enter: get_coordinate(x_movement, y_movement, enter_str),
-				exit: get_coordinate(x_movement, y_movement, exit_str)}
+		return {
+			enter: get_coordinate(x_movement, y_movement, enter_str),
+			exit: get_coordinate(x_movement, y_movement, exit_str)
+		}
 
 	};
 
@@ -538,12 +542,12 @@ var MultiScreen = (function() {
 
 			x_movement = '-' + x_movement + 'px';
 
-		// anywhere to the right
+			// anywhere to the right
 		} else if (input_str === 'topright' || input_str === 'right' || input_str === 'bottomright') {
 
 			x_movement = x_movement + 'px';
 
-		// anywhere in the middle
+			// anywhere in the middle
 		} else {
 
 			x_movement = '0';
@@ -555,19 +559,19 @@ var MultiScreen = (function() {
 
 			y_movement = '-' + y_movement + 'px';
 
-		// anywhere at the bottom
+			// anywhere at the bottom
 		} else if (input_str === 'bottomleft' || input_str === 'bottom' || input_str === 'bottomright') {
 
 			y_movement = y_movement + 'px';
 
-		// anwhere in the middle
+			// anwhere in the middle
 		} else {
 
 			y_movement = '0';
 
 		}
 
-		return {x: x_movement, y: y_movement};
+		return { x: x_movement, y: y_movement };
 
 	}
 
@@ -615,8 +619,8 @@ var MultiScreen = (function() {
 	var get_target_css = function (x_movement, y_movement, fade) {
 
 		// instantiate the return parts with the shared components of each command
-		var post_css = {position: 'absolute', zIndex: '2'},
-			pre_css = {display: 'block'},
+		var post_css = { position: 'absolute', zIndex: '2' },
+			pre_css = { display: 'block' },
 			animate_css = {};
 
 		// if the first part or the entire command is fade, add the CSS elements for the fade
@@ -647,7 +651,7 @@ var MultiScreen = (function() {
 		}
 
 		// return the components
-		return {pre_css: pre_css, animate_css: animate_css, post_css: post_css};
+		return { pre_css: pre_css, animate_css: animate_css, post_css: post_css };
 
 	};
 
@@ -662,7 +666,7 @@ var MultiScreen = (function() {
 	var get_current_css = function (x_movement, y_movement, fade) {
 
 		// instantiate the return parts with the shared components of each command
-		var post_css = {display: 'none'},
+		var post_css = { display: 'none' },
 			pre_css = {},
 			animate_css = {};
 
@@ -693,7 +697,7 @@ var MultiScreen = (function() {
 		}
 
 		// return the components
-		return {pre_css: pre_css, animate_css: animate_css, post_css: post_css};
+		return { pre_css: pre_css, animate_css: animate_css, post_css: post_css };
 
 	};
 
@@ -712,12 +716,12 @@ var MultiScreen = (function() {
 
 			default_animation = default_enter_animation;
 
-		// for default exit animation
+			// for default exit animation
 		} else if (type === 'exit') {
-			
+
 			default_animation = default_exit_animation;
 
-		// bad input
+			// bad input
 		} else {
 
 			return false;
@@ -743,7 +747,7 @@ var MultiScreen = (function() {
 	 * @return {Mixed} default animation time, or false if bad input
 	 */
 	var get_default_time = function (type) {
- 
+
 		var default_time;
 
 		// for the enter animation
@@ -751,17 +755,17 @@ var MultiScreen = (function() {
 
 			default_time = default_enter_time;
 
-		// for the exit animation
+			// for the exit animation
 		} else if (type === 'exit') {
-			
+
 			default_time = default_exit_time;
 
-		// for the exit animation
+			// for the exit animation
 		} else if (type === 'scroll') {
-			
+
 			default_time = default_scroll_time;
 
-		// bad input
+			// bad input
 		} else {
 
 			return false;
@@ -862,25 +866,25 @@ var MultiScreen = (function() {
 
 				default_enter_animation = command;
 
-			// set exit default
+				// set exit default
 			} else if (type === 'exit') {
 
 				default_exit_animation = command;
 
-			// no input given, so do both
+				// no input given, so do both
 			} else if (typeof type === 'undefined') {
 
 				default_enter_animation = command;
 				default_exit_animation = command;
 
-			// bad input
+				// bad input
 			} else {
 
 				return false;
 
 			}
 
-		// bad input
+			// bad input
 		} else {
 
 			return false;
@@ -903,34 +907,34 @@ var MultiScreen = (function() {
 
 			// set enter time default
 			if (type === 'enter') {
-			
+
 				default_enter_time = time;
 
-			// set exit time default
+				// set exit time default
 			} else if (type === 'exit') {
 
 				default_exit_time = time;
 
-			// set exit time default
+				// set exit time default
 			} else if (type === 'scroll') {
 
 				default_scroll_time = time;
 
-			// no input given, so do both
+				// no input given, so do both
 			} else if (typeof type === 'undefined') {
 
-			 	default_enter_time = time;
+				default_enter_time = time;
 				default_exit_time = time;
 				default_scroll_time = time;
 
-			// bad input
+				// bad input
 			} else {
 
 				return false;
 
 			}
 
-		// bad input
+			// bad input
 		} else {
 
 			return false;
@@ -953,15 +957,15 @@ var MultiScreen = (function() {
 
 			// set horizontal buffer
 			if (dimension === 'horizontal') {
-			
+
 				default_distance_buffer_horizontal = parseInt(distance);
 
-			// set vertical buffer
+				// set vertical buffer
 			} else if (dimension === 'vertical') {
 
 				default_distance_buffer_vertical = parseInt(distance);
 
-			// no input given, so do both
+				// no input given, so do both
 			} else if (typeof dimension === 'undefined') {
 
 				distance = parseInt(distance);
@@ -969,14 +973,14 @@ var MultiScreen = (function() {
 				default_distance_buffer_vertical = distance;
 
 
-			// bad input
+				// bad input
 			} else {
 
 				return false;
 
 			}
 
-		// bad input
+			// bad input
 		} else {
 
 			return false;
@@ -998,7 +1002,7 @@ var MultiScreen = (function() {
 			default_delay = delay;
 			return true;
 
-		// bad input
+			// bad input
 		} else {
 
 			return false;
@@ -1025,14 +1029,14 @@ var MultiScreen = (function() {
 
 				check_bool = !set_default_time(options.default_time) ? false : check_bool;
 
-			} 
+			}
 
 			// check for enter animation time
 			if (typeof options.default_enter_time !== 'undefined') {
 
 				check_bool = !set_default_time(options.default_enter_time, 'enter') ? false : check_bool;
 
-			} 
+			}
 
 			// check for exit animation time
 			if (typeof options.default_exit_time !== 'undefined') {
@@ -1046,14 +1050,14 @@ var MultiScreen = (function() {
 
 				check_bool = !set_default_time(options.default_scroll_time, 'scroll') ? false : check_bool;
 
-			} 
+			}
 
 			// check for animation command
 			if (typeof options.default_animation !== 'undefined') {
 
 				check_bool = !set_default_animation(options.default_animation) ? false : check_bool;
 
-			} 
+			}
 
 			// check for enter animation command
 			if (typeof options.default_enter_animation !== 'undefined') {
@@ -1099,7 +1103,7 @@ var MultiScreen = (function() {
 
 			return check_bool;
 
-		// bad input
+			// bad input
 		} else {
 
 			return false;
@@ -1109,13 +1113,15 @@ var MultiScreen = (function() {
 	}
 
 	// public functions
-	return {	init: init, 
-				set_default_animation: set_default_animation, 
-				set_default_time: set_default_time,
-				set_default_delay: set_default_delay,
-				set_default_distance: set_default_distance,
-				set_defaults: set_defaults,
-				switch_screens: switch_screens,
-				get_current_screen: get_current_screen};
+	return {
+		init: init,
+		set_default_animation: set_default_animation,
+		set_default_time: set_default_time,
+		set_default_delay: set_default_delay,
+		set_default_distance: set_default_distance,
+		set_defaults: set_defaults,
+		switch_screens: switch_screens,
+		get_current_screen: get_current_screen
+	};
 
 })();

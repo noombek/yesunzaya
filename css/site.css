@@ -102,6 +102,7 @@ body {
   transition: .5s ease;
   backface-visibility: hidden;
   cursor: pointer;
+  border-radius: 60px 20px 100px 0px;
 }
 
 .cloud9-item:hover, .gallery-item:hover{
