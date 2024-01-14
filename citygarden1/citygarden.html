@@ -4,11 +4,58 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
-  <link rel="stylesheet" href="assets/css/style.css">
+  <!-- <link rel="stylesheet" href="assets/css/style.css"> -->
   
+  <style>
+    
+#header, #header-right, #header-left{
+  display: flex;
+  justify-content: space-between;
+  position: sticky;
+    top: 0;
+    z-index: 150;
+    /* background-color: #EAEAEA; */
+    padding-left: 3px;
+  padding-right: 3px;
+  height: 28px;
+  -webkit-transition: height 0.3s;
+  -moz-transition: height 0.3s;
+  transition: height 0.3s;
+
+}
+
+.home1{
+  background-image: url(../gfx/home1.png);width: 272px; height: 78px;background-repeat: no-repeat;
+  margin-left: 20px;
+}
+.info1 {
+  background-image: url(../gfx/info1.png) ;width: 272px; height: 78px;background-repeat: no-repeat;
+}
+.contact1{
+  background-image: url(../gfx/contact1.png);width: 272px; height: 78px;
+}
+
+#right-screen a.contact1{
+  background-image: url(../gfx/contact1bold.png);width: 272px; height: 78px;
+}
+
+#left-screen a.info1{
+  background-image: url(../gfx/info1bold.png) ;width: 272px; height: 78px;background-repeat: no-repeat;
+}
+
+  </style>
   <title>City Garden</title>
 </head>
 <body >
+
+  <div id="header">
+
+    
+    <a href="javascript:void(0)" class="ms-nav-link info1" data-ms-target="left-screen" data-ms-exit-animation="right" data-ms-enter-animation="left" ></a>
+    <a href="/" class="home1" ></a>
+    <a href="javascript:void(0)" class="ms-nav-link contact1" data-ms-target="right-screen" data-ms-exit-animation="left" data-ms-enter-animation="right" ></a>
+  
+    </div>
  
 
 <style>

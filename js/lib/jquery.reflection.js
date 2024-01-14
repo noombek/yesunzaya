@@ -4,15 +4,15 @@
 	MIT-style license.
 */
 
-;(function($) {
+; (function ($) {
 
-	$.fn.reflect = function(options) {
+	$.fn.reflect = function (options) {
 		options = $.extend({
-			height: 1/3,
+			height: 1 / 3,
 			opacity: 0.5
 		}, options);
 
-		return this.unreflect().each(function() {
+		return this.unreflect().each(function () {
 			var img = this;
 			if (img.tagName === 'IMG') {
 				function doReflect() {
@@ -23,9 +23,9 @@
 					if (reflection.getContext) {
 						context = reflection.getContext("2d");
 						try {
-							$(reflection).attr({width: imageWidth, height: reflectionHeight});
+							$(reflection).attr({ width: imageWidth, height: reflectionHeight });
 							context.save();
-							context.translate(0, imageHeight-1);
+							context.translate(0, imageHeight - 1);
 							context.scale(1, -1);
 							context.drawImage(img, 0, 0, imageWidth, imageHeight);
 							context.restore();
@@ -37,7 +37,7 @@
 							context.fillStyle = gradient;
 							context.rect(0, 0, imageWidth, reflectionHeight);
 							context.fill();
-						} catch(e) {
+						} catch (e) {
 							return;
 						}
 					} else {
@@ -49,12 +49,12 @@
 							filter: "FlipV progid:DXImageTransform.Microsoft.Alpha(Opacity=" + (options.opacity * 100) + ", FinishOpacity=0, Style=1, StartX=0, StartY=0, FinishX=0, FinishY=" + (reflectionHeight / imageHeight * 100) + ")"
 						})[0];
 					}
-					$(reflection).css({display: "block", border: 0});
+					$(reflection).css({ display: "block", border: 0 });
 
 					wrapper = $((img.parentNode.tagName === 'A') ? "<span />" : "<div />").insertAfter(img).append([img, reflection])[0];
 					wrapper.className = img.className;
 					$(img).data("reflected", wrapper.style.cssText = img.style.cssText);
-					$(wrapper).css({width: imageWidth, height: imageHeight + reflectionHeight, overflow: "hidden"});
+					$(wrapper).css({ width: imageWidth, height: imageHeight + reflectionHeight, overflow: "hidden" });
 					img.style.cssText = "display: block; border: 0px";
 					img.className = "reflected";
 				}
@@ -65,8 +65,8 @@
 		});
 	}
 
-	$.fn.unreflect = function() {
-		return this.unbind("load").each(function() {
+	$.fn.unreflect = function () {
+		return this.unbind("load").each(function () {
 			var img = this, reflected = $(this).data("reflected"), wrapper;
 
 			if (reflected !== undefined) {

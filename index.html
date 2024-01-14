@@ -9,11 +9,11 @@
   <link rel="stylesheet" href="css/lib/jquery.qtip.css">
   <link rel="stylesheet" href="css/site.css">
   
-  <link href="css/NSB_Box.css" rel="stylesheet" type="text/css" />
+  <!-- <link href="css/NSB_Box.css" rel="stylesheet" type="text/css" /> -->
 	
 	<!-- jquery and NSB_Box.js Javascript for NSB Box -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<script src="js/NSB_Box.js"></script>
+	<!-- <script src="js/NSB_Box.js"></script> -->
   
   <link href="css/multiscreen/reset.css" type="text/css" rel="stylesheet" />
 		<link href="css/multiscreen/demo-styles.css" type="text/css" rel="stylesheet" />
@@ -37,13 +37,34 @@
 				});
 	
 			});
-      
-	
-
-
-      
 			</script>
-  
+
+      <!-- <script>
+        $(function(){
+ //the shrinkHeader variable is where you tell the scroll effect to start.
+ var shrinkHeader = 1000;
+  $(window).scroll(function() {
+    var scroll = getCurrentScroll();
+    
+      if ( scroll >= shrinkHeader ) {
+           $('#header').addClass('smaller');
+           
+           
+        }
+        else {
+            $('#header').removeClass('smaller');
+        }
+  });
+function getCurrentScroll() {
+    return window.pageYOffset || document.documentElement.scrollTop;
+    }
+});
+      </script> -->
+
+      
+
+
+ 
   <noscript>
     <style>
       #loading { background: none; }
@@ -63,15 +84,15 @@
   <div id="header">
 
     
-    <a href="javascript:void(0)" class="ms-nav-link info1" data-ms-target="left-screen" data-ms-exit-animation="right" data-ms-enter-animation="left" ></a>
-    <a href="/" class="home1" ></a>
-    <a href="javascript:void(0)" class="ms-nav-link contact1" data-ms-target="right-screen" data-ms-exit-animation="left" data-ms-enter-animation="right" ></a>
+    <a href="javascript:void(0)" class="ms-nav-link info1" data-ms-target="left-screen" data-ms-exit-animation="right" data-ms-enter-animation="left" >INFO</a>
+    <a href="/" class="home1" >YEUAYA</a>
+    <a href="javascript:void(0)" class="ms-nav-link contact1" data-ms-target="right-screen" data-ms-exit-animation="left" data-ms-enter-animation="right" >CONTACT</a>
   
     </div>
 
 
     
-  <div id="gallery">
+  <div id="gallery" class="slideshow-main">
     <div id="loading-wrap">
       <div id="loading">
         <noscript>
@@ -80,27 +101,76 @@
         </noscript>
       </div>
       <div id="showcase">
-        <img class="cloud9-item" src="gfx/work/1.jpg" alt="What Would Rembrandt Do?" width="250" height="250">
-        <img class="cloud9-item" src="gfx/work/2.jpg" alt="Transformation" width="250" height="250">
-        <img class="cloud9-item" src="gfx/work/3.jpg" alt="Does What's Inside Matter?" width="250" height="250">
-        <img class="cloud9-item" src="gfx/work/4.jpg" alt="I'm So Fat!" width="250" height="250">
-        <img class="cloud9-item" src="gfx/work/5.jpg" alt="Don't Hate the Player; Hate the Game" width="200" height="250">
-        <img class="cloud9-item" data-ribbon-id="07fa2a" data-info='2012 N/A N/A 3"' src="gfx/art/thumbs/free-food-at-the-beach-insurance.png" alt="Free Food at the Beach / Insurance">
-        <img class="cloud9-item" data-ribbon-id="77ba79" data-info='2012 30" 24" N/A' src="gfx/art/thumbs/malleable.png" alt="Malleable">
+        <img class="cloud9-item" src="gfx/work/1.jpg" width="250" height="250">
+        <img class="cloud9-item" src="gfx/work/2.jpg" width="250" height="250">
+        <img class="cloud9-item" src="gfx/work/3.jpg" width="250" height="250">
+        <img class="cloud9-item" src="gfx/work/4.jpg" width="250" height="250">
+        <img class="cloud9-item" src="gfx/work/5.jpg" width="200" height="250">
+        <img class="cloud9-item" src="gfx/work/1.jpg" width="250" height="250">
+        <img class="cloud9-item" src="gfx/work/2.jpg" width="250" height="250">
+        <img class="cloud9-item" src="gfx/work/3.jpg" width="250" height="250">
+        <img class="cloud9-item" src="gfx/work/4.jpg" width="250" height="250">
+        <img class="cloud9-item" src="gfx/work/5.jpg" width="200" height="250">
       </div>
     </div>
     
    
     <div id="loading-more"></div>
+    <div id="scrollbot"></div>
   </div>
   
 
-  <footer>
+
+  <div id="scroll" class="container" >
+    <div class="child">
+<a  class="hover1" href="citygarden1/citygarden.html"  >
+  <img class="gallery-item" src="gfx/work/1.jpg">
+  <p class="alt-2">HEHEHE</p>
+  <p class="alt-3">HUYHUY</p>
+  
+  
+</a>
+
+
+<a class="hover2" href="citygarden1/citygarden.html"><img class="gallery-item"  src="gfx/work/2.jpg"><p class="alt-2">HEHEHE</p><p class="alt-3">HUYHUY</p></a>
+
+<a  href="citygarden1/citygarden.html"><img class="gallery-item"  src="gfx/work/3.jpg"></a>
+
+<a  href="citygarden1/citygarden.html"><img class="gallery-item" src="gfx/work/4.jpg"></a>
+  <!-- </div></div> -->
+  
+<!-- <div class="container">
+  <div class="child"> -->
+<a href="citygarden1/citygarden.html"><img class="gallery-item" src="gfx/work/5.jpg"></a>
+<a href="citygarden1/citygarden.html"><img class="gallery-item"  src="gfx/work/1.jpg"></a>
+<a href="citygarden1/citygarden.html"><img class="gallery-item"  src="gfx/work/2.jpg"></a>
+<a href="citygarden1/citygarden.html"><img class="gallery-item"  src="gfx/work/3.jpg"></a>
+<!-- </div>
+</div> -->
+
+<!-- <div class="container"> -->
+  <!-- <div class="child"> -->
+<a href="citygarden1/citygarden.html"><img class="gallery-item"  src="gfx/work/4.jpg"></a>
+<a href="citygarden1/citygarden.html">
+    <img class="gallery-item" src="gfx/work/5.jpg">
+</a>
+<a href="Example-one-Picture.html">
+  <img class="gallery-item" src="gfx/work/1.jpg">
+</a>
+<a class="nsbbox"href="index.html">
+  <img class="gallery-item" src="gfx/work/2.jpg">
+</a>
+</div>
+</div>
+
+
+
+  <!-- <footer>
     <p id="expand">
       <button type="button">SEE ALL PROJECTS</button>
       
     </p>
-  </footer>
+  </footer> -->
 
 </div>
 
@@ -108,9 +178,9 @@
     <div id="header-right">
 
   
-      <a href="javascript:void(0)" class="ms-nav-link info1" data-ms-target="left-screen" data-ms-exit-animation="right" data-ms-enter-animation="left" ></a>
-      <a href="javascript:void(0)" class="ms-nav-link home1" data-ms-target="center-screen" data-ms-exit-animation="right" data-ms-enter-animation="left"></a>
-      <a href="javascript:void(0)" class="ms-nav-link contact1" data-ms-target="right-screen" data-ms-exit-animation="left" data-ms-enter-animation="right" ></a>
+      <a href="javascript:void(0)" class="ms-nav-link info1" data-ms-target="left-screen" data-ms-exit-animation="right" data-ms-enter-animation="left" >INFO</a>
+      <a href="javascript:void(0)" class="ms-nav-link home1" data-ms-target="center-screen" data-ms-exit-animation="right" data-ms-enter-animation="left">YEUAYA</a>
+      <a href="javascript:void(0)" class="ms-nav-link contact1" data-ms-target="right-screen" data-ms-exit-animation="left" data-ms-enter-animation="right" >CONTACT</a>
     
       </div>
       
@@ -125,14 +195,15 @@
     <div id="header-left">
 
   
-      <a href="javascript:void(0)" class="ms-nav-link info1" data-ms-target="left-screen" data-ms-exit-animation="right" data-ms-enter-animation="left" ></a>
-      <a href="javascript:void(0)" class="ms-nav-link home1" data-ms-target="center-screen" data-ms-exit-animation="left" data-ms-enter-animation="right"></a>
-      <a href="javascript:void(0)" class="ms-nav-link contact1" data-ms-target="right-screen" data-ms-exit-animation="left" data-ms-enter-animation="right" ></a>
+      <a href="javascript:void(0)" class="ms-nav-link info1" data-ms-target="left-screen" data-ms-exit-animation="right" data-ms-enter-animation="left" >INFO</a>
+      <a href="javascript:void(0)" class="ms-nav-link home1" data-ms-target="center-screen" data-ms-exit-animation="left" data-ms-enter-animation="right">YEUAYA</a>
+      <a href="javascript:void(0)" class="ms-nav-link contact1" data-ms-target="right-screen" data-ms-exit-animation="left" data-ms-enter-animation="right" >CONTACT</a>
     
       </div>
     <h2 class="centralize vertical-margin " style="color: black;">This is the left</h2>
     
   </div>
+  
   <script src="js/lib/jquery.js"></script>
   <script src="js/lib/jquery.reflection.js"></script>
   <script src="js/lib/jquery.cloud9carousel.js"></script>
@@ -142,7 +213,21 @@
   <script src="js/lib/jquery.qtip.js"></script>
   <script src="js/site.js"></script>
   
-  
-  
+<script>
+ $("#scrollbot").click(function() {
+    // When the element with ID "button" is clicked, execute the following function:
+
+    var offsetAboveTop = $("#scroll").offset().top - 150; // Adjust the value (50) as needed
+
+    $('html, body').animate({
+        // Select both the HTML and body elements and perform an animation:
+
+        scrollTop: offsetAboveTop
+        // Scroll to a position above the top of the element with ID "myDiv."
+    }, 2000);
+    // The animation should take 2000 milliseconds (2 seconds) to complete.
+});
+
+</script>
 </body>
 </html>

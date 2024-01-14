@@ -22,18 +22,18 @@
  */
 
 
-;(function($) {
+; (function ($) {
   //
   // Detect CSS transform support
   //
-  var transform = (function() {
+  var transform = (function () {
     var vendors = ['webkit', 'moz', 'ms'];
-    var style   = document.createElement( "div" ).style;
-    var trans   = 'transform' in style ? 'transform' : undefined;
+    var style = document.createElement("div").style;
+    var trans = 'transform' in style ? 'transform' : undefined;
 
-    for( var i = 0, count = vendors.length; i < count; i++ ) {
+    for (var i = 0, count = vendors.length; i < count; i++) {
       var prop = vendors[i] + 'Transform';
-      if( prop in style ) {
+      if (prop in style) {
         trans = prop;
         break;
       }
@@ -42,7 +42,7 @@
     return trans;
   })();
 
-  var Item = function( image, options ) {
+  var Item = function (image, options) {
     image.item = this;
     this.image = image;
     this.fullWidth = image.width;
@@ -53,9 +53,9 @@
     image.style.position = 'absolute';
     image = $(image);
 
-    if( options.mirror ) {
+    if (options.mirror) {
       // Wrap image in a div together with its generated reflection
-      this.reflection = image.reflect( options.mirror ).next()[0];
+      this.reflection = image.reflect(options.mirror).next()[0];
 
       var $reflection = $(this.reflection);
       this.reflection.fullHeight = $reflection.height();
@@ -69,10 +69,10 @@
     } else
       this.element = this.image;
 
-    if( transform && options.transforms )
+    if (transform && options.transforms)
       this.element.style[transform + "Origin"] = "0 0";
 
-    this.moveTo = function( x, y, scale ) {
+    this.moveTo = function (x, y, scale) {
       this.width = this.fullWidth * scale;
       this.height = this.fullHeight * scale;
       this.x = x;
@@ -82,11 +82,11 @@
       var style = this.element.style;
       style.zIndex = "" + (scale * 100) | 0;
 
-      if( transform && options.transforms ) {
+      if (transform && options.transforms) {
         style[transform] = "translate(" + x + "px, " + y + "px) scale(" + scale + ")";
       } else {
         // The gap between the image and its reflection doesn't resize automatically
-        if( options.mirror )
+        if (options.mirror)
           this.reflection.style.marginTop = (options.mirror.gap * scale) + "px";
 
         style.width = this.width + "px";
@@ -96,10 +96,10 @@
     }
   }
 
-  var time = (function() {
+  var time = (function () {
     return !window.performance || !window.performance.now ?
-      function() { return +new Date() } :
-      function() { return performance.now() };
+      function () { return +new Date() } :
+      function () { return performance.now() };
   })();
 
   //
@@ -111,25 +111,25 @@
   var cancelFrame = window.cancelAnimationFrame || window.cancelRequestAnimationFrame;
   var requestFrame = window.requestAnimationFrame;
 
-  (function() {
+  (function () {
     var vendors = ['webkit', 'moz', 'ms'];
 
-    for( var i = 0, count = vendors.length; i < count && !cancelFrame; i++ ) {
-      cancelFrame = window[vendors[i]+'CancelAnimationFrame'] || window[vendors[i]+'CancelRequestAnimationFrame'];
-      requestFrame = requestFrame && window[vendors[i]+'RequestAnimationFrame'];
+    for (var i = 0, count = vendors.length; i < count && !cancelFrame; i++) {
+      cancelFrame = window[vendors[i] + 'CancelAnimationFrame'] || window[vendors[i] + 'CancelRequestAnimationFrame'];
+      requestFrame = requestFrame && window[vendors[i] + 'RequestAnimationFrame'];
     }
   }());
 
-  var Carousel = function( element, options ) {
+  var Carousel = function (element, options) {
     var self = this;
     var $container = $(element);
     this.items = [];
-    this.xOrigin = (options.xOrigin === null) ? $container.width()  * 0.5 : options.xOrigin;
+    this.xOrigin = (options.xOrigin === null) ? $container.width() * 0.5 : options.xOrigin;
     this.yOrigin = (options.yOrigin === null) ? $container.height() * 0.1 : options.yOrigin;
-    this.xRadius = (options.xRadius === null) ? $container.width()  / 2.3 : options.xRadius;
-    this.yRadius = (options.yRadius === null) ? $container.height() / 6   : options.yRadius;
+    this.xRadius = (options.xRadius === null) ? $container.width() / 2.3 : options.xRadius;
+    this.yRadius = (options.yRadius === null) ? $container.height() / 6 : options.yRadius;
     this.farScale = options.farScale;
-    this.rotation = this.destRotation = Math.PI/2; // start with the first item in front
+    this.rotation = this.destRotation = Math.PI / 2; // start with the first item in front
     this.speed = options.speed;
     this.smooth = options.smooth;
     this.fps = options.fps;
@@ -144,22 +144,22 @@
       transforms: options.transforms
     }
 
-    if( options.mirror ) {
-      this.itemOptions.mirror = $.extend( { gap: 2 }, options.mirror );
+    if (options.mirror) {
+      this.itemOptions.mirror = $.extend({ gap: 2 }, options.mirror);
     }
 
-    $container.css( { position: 'relative', overflow: 'hidden' } );
+    $container.css({ position: 'relative', overflow: 'hidden' });
 
     // Rotation:
     //  *      0 : right
     //  *   Pi/2 : front
     //  *   Pi   : left
     //  * 3 Pi/2 : back
-    this.rotateItem = function( itemIndex, rotation ) {
+    this.rotateItem = function (itemIndex, rotation) {
       var item = this.items[itemIndex];
       var sin = Math.sin(rotation);
       var farScale = this.farScale;
-      var scale = farScale + ((1-farScale) * (sin+1) * 0.5);
+      var scale = farScale + ((1 - farScale) * (sin + 1) * 0.5);
 
       item.moveTo(
         this.xOrigin + (scale * ((Math.cos(rotation) * this.xRadius) - (item.fullWidth * 0.5))),
@@ -168,27 +168,27 @@
       );
     }
 
-    this.render = function() {
+    this.render = function () {
       var count = this.items.length;
       var spacing = 2 * Math.PI / count;
       var radians = this.rotation;
 
-      for( var i = 0; i < count; i++ ) {
-        this.rotateItem( i, radians );
+      for (var i = 0; i < count; i++) {
+        this.rotateItem(i, radians);
         radians += spacing;
       }
 
-      if( typeof this.onRendered === 'function' )
-        this.onRendered( this );
+      if (typeof this.onRendered === 'function')
+        this.onRendered(this);
     }
 
-    this.playFrame = function() {
+    this.playFrame = function () {
       var rem = self.destRotation - self.rotation;
       var now = time();
       var dt = (now - self.lastTime) * 0.002;
       self.lastTime = now;
 
-      if( Math.abs(rem) < 0.003 ) {
+      if (Math.abs(rem) < 0.003) {
         self.rotation = self.destRotation;
         self.pause();
       } else {
@@ -200,19 +200,19 @@
       self.render();
     }
 
-    this.scheduleNextFrame = function() {
+    this.scheduleNextFrame = function () {
       this.lastTime = time();
 
       this.timer = this.smooth && cancelFrame ?
-        requestFrame( self.playFrame ) :
-        setTimeout( self.playFrame, 1000 / this.fps );
+        requestFrame(self.playFrame) :
+        setTimeout(self.playFrame, 1000 / this.fps);
     }
 
-    this.itemsRotated = function() {
-      return this.items.length * ((Math.PI/2) - this.rotation) / (2*Math.PI);
+    this.itemsRotated = function () {
+      return this.items.length * ((Math.PI / 2) - this.rotation) / (2 * Math.PI);
     }
 
-    this.floatIndex = function() {
+    this.floatIndex = function () {
       var count = this.items.length;
       var floatIndex = this.itemsRotated() % count;
 
@@ -220,138 +220,139 @@
       return (floatIndex < 0) ? floatIndex + count : floatIndex;
     }
 
-    this.nearestIndex = function() {
-      return Math.round( this.floatIndex() ) % this.items.length;
+    this.nearestIndex = function () {
+      return Math.round(this.floatIndex()) % this.items.length;
     }
 
-    this.nearestItem = function() {
+    this.nearestItem = function () {
       return this.items[this.nearestIndex()];
     }
 
-    this.play = function() {
-      if( this.timer === 0 )
+    this.play = function () {
+      if (this.timer === 0)
         this.scheduleNextFrame();
     }
 
-    this.pause = function() {
-      this.smooth && cancelFrame ? cancelFrame( this.timer ) : clearTimeout( this.timer );
+    this.pause = function () {
+      this.smooth && cancelFrame ? cancelFrame(this.timer) : clearTimeout(this.timer);
       this.timer = 0;
     }
 
     //
     // Spin the carousel.  Count is the number (+-) of carousel items to rotate
     //
-    this.go = function( count ) {
+    this.go = function (count) {
       this.destRotation += (2 * Math.PI / this.items.length) * count;
       this.play();
     }
 
-    this.deactivate = function() {
+    this.deactivate = function () {
       this.pause();
-      clearInterval( this.autoPlayTimer );
-      options.buttonLeft.unbind( 'click' );
-      options.buttonRight.unbind( 'click' );
-      $container.unbind( '.cloud9' );
+      clearInterval(this.autoPlayTimer);
+      options.buttonLeft.unbind('click');
+      options.buttonRight.unbind('click');
+      $container.unbind('.cloud9');
     }
 
-    this.autoPlay = function() {
+    this.autoPlay = function () {
       this.autoPlayTimer = setInterval(
-        function() { self.go( self.autoPlayAmount ) },
+        function () { self.go(self.autoPlayAmount) },
         this.autoPlayDelay
       );
     }
 
-    this.enableAutoPlay = function() {
+    this.enableAutoPlay = function () {
       // Stop auto-play on mouse over
-      $container.bind( 'mouseover.cloud9', function() {
-        clearInterval( self.autoPlayTimer );
-      } );
+      $container.bind('mouseover.cloud9', function () {
+        clearInterval(self.autoPlayTimer);
+      });
 
       // Resume auto-play when mouse leaves the container
-      $container.bind( 'mouseout.cloud9', function() {
+      $container.bind('mouseout.cloud9', function () {
         self.autoPlay();
-      } );
+      });
 
       this.autoPlay();
     }
 
-    this.bindControls = function() {
-      options.buttonLeft.bind( 'click', function() {
-        self.go( -1 );
+    this.bindControls = function () {
+      options.buttonLeft.bind('click', function () {
+        self.go(-1);
         return false;
-      } );
+      });
 
-      options.buttonRight.bind( 'click', function() {
-        self.go( 1 );
+      options.buttonRight.bind('click', function () {
+        self.go(1);
         return false;
-      } );
+      });
 
-      if( options.mouseWheel ) {
-        $container.bind( 'mousewheel.cloud9', function( event, delta ) {
-          self.go( (delta > 0) ? 1 : -1 );
+      if (options.mouseWheel) {
+        $container.bind('mousewheel.cloud9', function (event, delta) {
+          self.go((delta > 0) ? 1 : -1);
           return false;
-        } );
+        });
       }
 
-      if( options.bringToFront ) {
-        $container.bind( 'click.cloud9', function( event ) {
-          var hits = $(event.target).closest( '.' + options.itemClass );
+      if (options.bringToFront) {
+        $container.bind('click.cloud9', function (event) {
+          var hits = $(event.target).closest('.' + options.itemClass);
 
-          if( hits.length !== 0 ) {
-            var idx = self.items.indexOf( hits[0].item );
+          if (hits.length !== 0) {
+            var idx = self.items.indexOf(hits[0].item);
             var count = self.items.length;
             var diff = idx - (self.floatIndex() % count);
 
             // Choose direction based on which way is shortest
-            if( 2 * Math.abs(diff) > count )
+            if (2 * Math.abs(diff) > count)
               diff += (diff > 0) ? -count : count;
-
+            // Change speed 
+            self.speed = 10;
             self.destRotation = self.rotation;
-            self.go( -diff );
+            self.go(-diff);
           }
-        } );
+        });
       }
     }
 
-    var images = $container.find( '.' + options.itemClass );
+    var images = $container.find('.' + options.itemClass);
 
-    this.finishInit = function() {
+    this.finishInit = function () {
       //
       // Wait until all images have completely loaded
       //
-      for( var i = 0; i < images.length; i++ ) {
+      for (var i = 0; i < images.length; i++) {
         var im = images[i];
-        if( (im.width === undefined) || ((im.complete !== undefined) && !im.complete) )
+        if ((im.width === undefined) || ((im.complete !== undefined) && !im.complete))
           return;
       }
 
-      clearInterval( this.initTimer );
+      clearInterval(this.initTimer);
 
       // Init items
-      for( i = 0; i < images.length; i++ )
-        this.items.push( new Item( images[i], this.itemOptions ) );
+      for (i = 0; i < images.length; i++)
+        this.items.push(new Item(images[i], this.itemOptions));
 
       // Disable click-dragging of items
-      $container.bind( 'mousedown onselectstart', function() { return false } );
+      $container.bind('mousedown onselectstart', function () { return false });
 
-      if( this.autoPlayAmount !== 0 ) this.enableAutoPlay();
+      if (this.autoPlayAmount !== 0) this.enableAutoPlay();
       this.bindControls();
       this.render();
 
-      if( typeof this.onLoaded === 'function' )
-        this.onLoaded( this );
+      if (typeof this.onLoaded === 'function')
+        this.onLoaded(this);
     };
 
-    this.initTimer = setInterval( function() { self.finishInit() }, 50 );
+    this.initTimer = setInterval(function () { self.finishInit() }, 50);
   }
 
   //
   // The jQuery plugin
   //
-  $.fn.Cloud9Carousel = function( options ) {
-    return this.each( function() {
+  $.fn.Cloud9Carousel = function (options) {
+    return this.each(function () {
       /* For full list of options see the README */
-      options = $.extend( {
+      options = $.extend({
         xOrigin: null,        // null: calculated automatically
         yOrigin: null,
         xRadius: null,
@@ -366,9 +367,9 @@
         bringToFront: false,
         itemClass: 'cloud9-item',
         handle: 'carousel'
-      }, options );
+      }, options);
 
-      $(this).data( options.handle, new Carousel( this, options ) );
-    } );
+      $(this).data(options.handle, new Carousel(this, options));
+    });
   }
-})( window.jQuery || window.Zepto );
+})(window.jQuery || window.Zepto);
