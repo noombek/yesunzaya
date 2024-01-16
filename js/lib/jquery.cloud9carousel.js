@@ -306,7 +306,7 @@
             if (2 * Math.abs(diff) > count)
               diff += (diff > 0) ? -count : count;
             // Change speed 
-            self.speed = 10;
+            self.speed = 15;
             self.destRotation = self.rotation;
             self.go(-diff);
           }
@@ -360,10 +360,10 @@
         farScale: 0.5,        // scale of the farthest item
         transforms: true,     // enable CSS transforms
         smooth: true,         // enable smooth animation via requestAnimationFrame()
-        fps: 30,              // fixed frames per second (if smooth animation is off)
-        speed: 4,             // positive number
+        fps: 60,              // fixed frames per second (if smooth animation is off)
+        speed: 15,             // positive number
         autoPlay: 0,          // [ 0: off | number of items (integer recommended, positive is clockwise) ]
-        autoPlayDelay: 5000,
+        autoPlayDelay: 1000,
         bringToFront: false,
         itemClass: 'cloud9-item',
         handle: 'carousel'
@@ -373,3 +373,4 @@
     });
   }
 })(window.jQuery || window.Zepto);
+

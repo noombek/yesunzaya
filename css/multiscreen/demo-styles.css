@@ -1,8 +1,9 @@
-/**
- * Styles for Multi-Screen.js demo page
- * @author Ian de Vries <ian@ian-devries.com>
- * @license MIT License <http://opensource.org/licenses/MIT>
- */
+/* Media screen only for desktop */
+@media screen and (min-width: 1200px) {
+	body #contact{
+		margin-top: 20%;
+	}
+}
 html,body{
 	align-items: center;
 }
@@ -34,19 +35,19 @@ h2 {
 }
 
 #contact{
-	margin-top: 15%;
+	margin-top: 70%;
 }
 
 #contact>a:link {
-	margin-bottom: 50px;
+	margin-bottom: 30px;
 	color: #000000;
-	font-weight:900;
+	
 	text-decoration: none;
-	font-size: 4rem;
+	font-size: 35px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	letter-spacing: 20px;
+	letter-spacing: 4px;
 	
 	
 }

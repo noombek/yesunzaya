@@ -4,14 +4,40 @@
 console.log("JavaScript code is running");
 
 function iconAnimate(icon) {
-  // ... existing iconAnimate function code
+  var i, h = icon.height(),
+    x = icon.stop(true).css('background-position').split(' '),
+    lastStep = -1;
+
+  //
+  // Some browsers report background-position as
+  // "<x> <y>", others as "left <x> top <y>"
+  //
+  x = (x[0] === 'left') ? x[1] : x[0];
+
+  $({ i: 0 }).animate(
+    { i: 10.9 }, {
+    duration: 500,
+    step: function (step) {
+      /* round the step off for discrete frame jumps */
+      step = ~~step;
+
+      if (step != lastStep) {
+        lastStep = step;
+        icon.css('background-position', x + ' ' + (h * step) + 'px');
+      }
+    },
+    complete: function () {
+      icon.css('background-position', x + ' 0');
+    }
+  }
+  );
 }
 
-// Carousel Showcase Section
 var mirrorOpts = {
   gap: 3,
   height: 0.23
 };
+
 
 var showcase;
 
@@ -83,4 +109,5 @@ function showcaseArrowClicked(event) {
 $(function () {
   showcaseInit();
 });
+
 

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
 @media screen and (min-width: 1200px) {
   body h1{
     font-size: 65px;
@@ -5,17 +7,40 @@
   body .home1{
     font-size: 25px;
   }
+  
   body .content{
     width: 105vh;
   }
+  body .totop{
+    font-size: 25px;
+  }
+  body .back_button{
+    font-size: 25px;
+  }
 }
+
 body {
-  
+  font-family: 'Poppins';
   margin: 0;
   padding: 0;
   background-color: #000000;
+  animation: fadeInAnimation ease 1.5s;
+            animation-iteration-count: 1;
+            
   
 }
+
+@keyframes fadeInAnimation {
+            0% {
+                opacity: 0;
+                transform: translateY(1%);
+            }
+            
+            100% {
+                opacity: 1;
+                transform: translateY(0%);
+            }
+        }
 h1{
   font-size: 105px;
   padding-top: 5%;
@@ -36,9 +61,14 @@ h1{
   flex-direction: column;
   width: 100%;
   height: 100%;
- 
 }
-.content img{
+
+.content a{
+  display: flex;
+  padding: 0;
+  margin: 0;
+}
+.content a img{
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -47,7 +77,24 @@ h1{
 /* Header and text customize */
 .home1{
   /* background-image: url(../gfx/home1.png);width: 272px; height: 78px;background-repeat: no-repeat; */
-  font-family: 'Poppins', sans-serif;
+  
+  font-weight: 500;
+  font-size: 65px;
+  text-decoration: none;
+  color: azure;
+  
+}
+.back_button {
+  /* background-image: url(../gfx/info1.png) ;width: 272px; height: 78px;background-repeat: no-repeat; */
+  
+  font-weight: 500;
+  font-size: 65px;
+  text-decoration: none;
+  color: azure;
+}
+.totop{
+  /* background-image: url(../gfx/contact1.png);width: 272px; height: 78px; */
+  
   font-weight: 500;
   font-size: 65px;
   text-decoration: none;
@@ -55,11 +102,41 @@ h1{
 }
 #header{
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   position: sticky;
     top: 0;
     z-index: 150;
     /* background-color: #EAEAEA; */
   /* height: 28px; */
 }
+
+
+/* .totop {
+  position: fixed;
+  top:0;
+  right: 50px;
+  transition: 1s all;
+  z-index: 999;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  font-size: 65px;
+  text-decoration: none;
+  color: azure;
+  transform: translateX(40px);
+}
+.back_button{
+   position: fixed;
+  top:0;
+  left: 50px;
+  transition: 1s all;
+  z-index: 999;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  font-size: 65px;
+  text-decoration: none;
+  color: azure;
+  transform: translateX(-40px);
+} */
+
 /* --- Header and text customize */
+

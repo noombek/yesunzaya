@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
 
 /* Media screen only for desktop */
 @media screen and (min-width: 1200px) {
@@ -81,7 +81,7 @@ body .slideshow-main{
   /* background-image: url(../gfx/home1.png);width: 272px; height: 78px;background-repeat: no-repeat; */
   margin-left: 15%;
   font-family: 'Poppins', sans-serif;
-  font-weight: 500;
+  
   font-size: 65px;
   text-decoration: none;
   color: #000000;
@@ -89,7 +89,7 @@ body .slideshow-main{
 .info1 {
   /* background-image: url(../gfx/info1.png) ;width: 272px; height: 78px;background-repeat: no-repeat; */
   font-family: 'Poppins', sans-serif;
-  font-weight: 500;
+  
   font-size: 65px;
   text-decoration: none;
   color: #000000;
@@ -97,7 +97,7 @@ body .slideshow-main{
 .contact1{
   /* background-image: url(../gfx/contact1.png);width: 272px; height: 78px; */
   font-family: 'Poppins', sans-serif;
-  font-weight: 500;
+  
   font-size: 65px;
   text-decoration: none;
   color: #000000;
@@ -170,13 +170,28 @@ body {
   /* background-image: url(../bg.png); */
   margin: 0;
   overflow-x: hidden;
+  font-family: 'Poppins';
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -khtml-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select:none;
+  animation: fadeInAnimation ease 1.5s;
+            animation-iteration-count: 1;
+            
 }
+@keyframes fadeInAnimation {
+            0% {
+                opacity: 0;
+                
+            }
+            
+            100% {
+                opacity: 1;
+                
+            }
+        }
 /* ::-moz-selection {
   background-color: black;
 }
