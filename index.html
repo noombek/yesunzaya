@@ -88,21 +88,12 @@
     <!-- Header -->
     <div id="header">
     <a href="javascript:void(0)" class="ms-nav-link info1" data-ms-target="left-screen" data-ms-exit-animation="right" data-ms-enter-animation="left" >INFO</a>
-    <a href="/" class="home1" id="pathnameLink">YEUAYA</a>
+    <a href="/" class="home1" id="homelink">YEUAYA</a>
     <a href="javascript:void(0)" class="ms-nav-link contact1" data-ms-target="right-screen" data-ms-exit-animation="left" data-ms-enter-animation="right" >CONTACT</a>
     </div>
     <!-- Header end -->
-<script>
-    var url = window.location;
-    
-    var pathname = new URL(url).pathname;
 
-    document.getElementById('pathnameLink').href = pathname;
-    
-    alert(pathname); 
-  </script>
   
-
     <!-- Slideshow -->
   <div id="gallery" class="slideshow-main">
     <div id="loading-wrap">
@@ -301,6 +292,13 @@
 </script>
  <!-- Scroll to first content element -->
  
+ <!-- Home Link -->
+<script>
+    var url = window.location.host;
+    var pathname = new URL(url).pathname;
+    document.getElementById('homelink').href = pathname;
+  </script>
 
+<!-- Home link -->
 </body>
 </html>
