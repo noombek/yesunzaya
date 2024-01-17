@@ -177,6 +177,7 @@ body {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select:none;
+  
 }
 
        
@@ -386,8 +387,10 @@ transition: 1s ease;
 }
 /* --- Main page height */
 
-   
+.child a:focus{
+  filter: blur(5px);
 
+}
 
 
 
