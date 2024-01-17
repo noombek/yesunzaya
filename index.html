@@ -93,6 +93,16 @@
     </div>
     <!-- Header end -->
 
+     <!-- Home Link -->
+<script>
+    var url = window.location.host;
+    var pathname = new URL(url).pathname;
+    document.getElementById('homelink').href = pathname;
+    alert(pathname);
+  </script>
+
+<!-- Home link -->
+
   
     <!-- Slideshow -->
   <div id="gallery" class="slideshow-main">
@@ -292,14 +302,6 @@
 </script>
  <!-- Scroll to first content element -->
  
- <!-- Home Link -->
-<script>
-    var url = window.location.host;
-    var pathname = new URL(url).pathname;
-    document.getElementById('homelink').href = pathname;
-    alert(pathname);
-  </script>
 
-<!-- Home link -->
 </body>
 </html>
