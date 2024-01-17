@@ -3,19 +3,44 @@
 	body #contact{
 		margin-top: 20%;
 	}
+
+	body #info-container{
+	display: flex;
+	flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+	position: absolute;
+	top: 20%;
+	width: 70%;
+	left: 15%;
+	}
+
+	body .ner{
+	font-size: 30px;
+	padding-right: 0;
+	padding-bottom: 0;
+	
+	}
+	body .zurag{
+	
+	right: 0;
+	transform: translate(0, 0);
+	}
+	body .bio{
+	padding-top: 15%;
+	font-size: 15px;
+	max-width: 100%;
+	}
+	body h5{
+	font-weight: 700;
+	font-size: 20px;
+}
 }
 html,body{
 	align-items: center;
 }
 
-
-h1, h2 {
-	font-family: 'Bitter', serif;
-}
-
-h2 {
-	font-size: 3.5em;
-}
 
 
 .ms-container {
@@ -59,3 +84,43 @@ a:visited {
 a:hover {
 	color: #84dddc;
 }
+
+/* Info Section */
+
+h5{
+	font-weight: 900;
+	font-size: 30px;
+}
+
+#info-container{
+	display: flex;
+	flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+	position: absolute;
+	top: 20%;
+	
+	left: 10%;
+}
+
+.ner{
+	/* padding-left: 5%; */
+	padding-right: 30%;
+	padding-bottom: 20%;
+	font-size: 50px;
+
+}
+.zurag{
+	position: relative;
+  	top: 50%;
+  	left: 45%;
+  	transform: translate(-50%, 0%);
+}
+.bio{
+	padding-top: 20%;
+	max-width: 90%;
+	font-size: 25px;
+}
+
+/* Info Section */

@@ -95,7 +95,7 @@ h1{
 .home1{
   /* background-image: url(../gfx/home1.png);width: 272px; height: 78px;background-repeat: no-repeat; */
   
-  font-weight: 500;
+  
   font-size: 65px;
   text-decoration: none;
   color: azure;
@@ -104,7 +104,7 @@ h1{
 .back_button {
   /* background-image: url(../gfx/info1.png) ;width: 272px; height: 78px;background-repeat: no-repeat; */
   
-  font-weight: 500;
+  
   font-size: 65px;
   text-decoration: none;
   color: azure;
@@ -112,7 +112,7 @@ h1{
 .totop{
   /* background-image: url(../gfx/contact1.png);width: 272px; height: 78px; */
   
-  font-weight: 500;
+  
   font-size: 65px;
   text-decoration: none;
   color: azure;
