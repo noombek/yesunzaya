@@ -18,7 +18,7 @@
     <div id="header">
     <a href="javascript:history.back()" class="back_button">BACK</a>
 
-    <a href="/" class="home1" id="homelink">YEUAYA</a>
+    <a href="#" onclick="goBack()" class="home1">YEUAYA</a>
 
     <a href="#up" class="totop ">TOP</a>
     
@@ -72,11 +72,15 @@
 </script>
 
  <!-- Home Link -->
-<script>
-    var url = window.location.host;
-    var pathname = new URL(url).pathname;
-    document.getElementById('homelink').href = pathname;
-  </script>
+  <script>
+  function goBack() {
+    // Replace this with your custom logic for determining the previous URL
+    var previousUrl = document.referrer;
+  
+    // Navigate to the previous URL
+    window.location.href = previousUrl;
+  }
+</script>
 
 <!-- Home link -->
 
