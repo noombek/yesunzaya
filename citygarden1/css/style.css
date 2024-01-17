@@ -41,6 +41,23 @@ body {
                 transform: translateY(0%);
             }
         }
+
+/* Scrollbar customize */
+body::-webkit-scrollbar {
+	width: 0.5em;
+  
+}
+ 
+body::-webkit-scrollbar-track {
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+ 
+body::-webkit-scrollbar-thumb {
+  background-color: gray;
+  outline: 1px solid slategrey;
+  border-radius: 50px;
+}
+/* --- Scrollbar customize */
 h1{
   font-size: 105px;
   padding-top: 5%;
