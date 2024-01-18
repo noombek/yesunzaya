@@ -1,311 +1,471 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta property="og:image" content="gfx/work/2.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="627" />
+    <link rel="image_src" href="gfx/work/2.jpg" />
+    <title>YESUNZAYA</title>
+    <link rel="shortcut icon" href="gfx/favico.ico" type="image/x-icon" />
+    <!-- <link rel="stylesheet" href="css/lib/jquery.fancybox.css" />
+    <link rel="stylesheet" href="css/lib/jquery.qtip.css" /> -->
+    <link rel="stylesheet" href="css/site.css" />
+    <!-- <link href="css/NSB_Box.css" rel="stylesheet" type="text/css" /> -->
+    <!-- jquery and NSB_Box.js Javascript for NSB Box -->
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
+    <!-- <script src="js/NSB_Box.js"></script> -->
+    <link href="css/multiscreen/reset.css" type="text/css" rel="stylesheet" />
+    <link
+      href="css/multiscreen/demo-styles.css"
+      type="text/css"
+      rel="stylesheet"
+    />
+    <link
+      href="css/multiscreen/multi-screen-css.css"
+      type="text/css"
+      rel="stylesheet"
+    />
+    <script
+      type="text/javascript"
+      src="https://code.jquery.com/jquery-latest.pack.js"
+    ></script>
+    <script type="text/javascript" src="js/multi-screen.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        MultiScreen.init();
+        $("#topleft-via-top").click(function () {
+          MultiScreen.switch_screens({
+            target_id: "left",
+            exit_animation_command: "right",
+          });
+        });
+      });
+    </script>
 
-  <meta charset="UTF-8">
-  <meta property="og:image" content='gfx/work/2.jpg'/>
-  <meta property='og:image:width' content='1200' />
-  <meta property='og:image:height' content='627' />
-  <link rel="image_src" href="gfx/work/2.jpg">
-  <title>YESUNZAYA</title>
-  <link rel="shortcut icon" href="gfx/favico.ico" type="image/x-icon" />
-  <link rel="stylesheet" href="css/lib/jquery.fancybox.css">
-  <link rel="stylesheet" href="css/lib/jquery.qtip.css">
-  <link rel="stylesheet" href="css/site.css">
-  <!-- <link href="css/NSB_Box.css" rel="stylesheet" type="text/css" /> -->
-	<!-- jquery and NSB_Box.js Javascript for NSB Box -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<!-- <script src="js/NSB_Box.js"></script> -->
-  <link href="css/multiscreen/reset.css" type="text/css" rel="stylesheet" />
-		<link href="css/multiscreen/demo-styles.css" type="text/css" rel="stylesheet" />
-		<link href="css/multiscreen/multi-screen-css.css" type="text/css" rel="stylesheet" />
-		<script type="text/javascript" src="https://code.jquery.com/jquery-latest.pack.js"></script>
-		<script type="text/javascript" src="js/multi-screen.js"></script>
-		<script type="text/javascript">
-			$(document).ready(function() { 
-				MultiScreen.init(); 
-				$('#topleft-via-top').click(function () {
-					MultiScreen.switch_screens(
-							{target_id: 'left', exit_animation_command: 'right'}
-					);
-				});
-			});
-			</script>
+    <script>
+      //         $(function(){
+      //  //the shrinkHeader variable is where you tell the scroll effect to start.
+      //  var shrinkHeader = 1000;
+      //   $(window).scroll(function() {
+      //     var scroll = getCurrentScroll();
 
-      <script>
-//         $(function(){
-//  //the shrinkHeader variable is where you tell the scroll effect to start.
-//  var shrinkHeader = 1000;
-//   $(window).scroll(function() {
-//     var scroll = getCurrentScroll();
-    
-//       if ( scroll >= shrinkHeader ) {
-//            $('#header').addClass('smaller');
-           
-           
-//         }
-//         else {
-//             $('#header').removeClass('smaller');
-//         }
-//   });
-// function getCurrentScroll() {
-//     return window.pageYOffset || document.documentElement.scrollTop;
-//     }
-// });
-// Scroll to decrease gallery opactiy
-    $(window).scroll(function() {
-    var scrollTop = $(this).scrollTop();
+      //       if ( scroll >= shrinkHeader ) {
+      //            $('#header').addClass('smaller');
 
-        $('#gallery').css({
-        opacity: function() {
+      //         }
+      //         else {
+      //             $('#header').removeClass('smaller');
+      //         }
+      //   });
+      // function getCurrentScroll() {
+      //     return window.pageYOffset || document.documentElement.scrollTop;
+      //     }
+      // });
+      // Scroll to decrease gallery opactiy
+      $(window).scroll(function () {
+        var scrollTop = $(this).scrollTop();
+
+        $("#gallery").css({
+          opacity: function () {
             var elementHeight = $(this).height(),
-            opacity = ((elementHeight - scrollTop) / elementHeight);
+              opacity = (elementHeight - scrollTop) / elementHeight;
             return opacity;
+          },
+        });
+      });
+      // Scroll to decrease gallery opactiy
+    </script>
+
+    <noscript>
+      <style>
+        #loading {
+          background: none;
         }
-    });
-});
-// Scroll to decrease gallery opactiy
-      </script>
-
-      
-
-
- 
-  <noscript>
-    <style>
-      #loading { background: none; }
-      #loading > noscript {
-        font-size: 25px;
-        text-align: center;
-        margin-top: 190px;
-        display: block;
-      }
-    </style>
-  </noscript>
-</head>
-<body>
-
-<!-- Center screen -->
-  <div id="center-screen" class="ms-container ms-default" >
-
-    <!-- Header -->
-    <div id="header">
-    <a href="javascript:void(0)" class="ms-nav-link info1" data-ms-target="left-screen" data-ms-exit-animation="right" data-ms-enter-animation="left" >INFO</a>
-    <a href="/" class="home1" id="homelink">YEUAYA</a>
-    <a href="javascript:void(0)" class="ms-nav-link contact1" data-ms-target="right-screen" data-ms-exit-animation="left" data-ms-enter-animation="right" >CONTACT</a>
-    </div>
-    <!-- Header end -->
-
-    
-
-  
-    <!-- Slideshow -->
-  <div id="gallery" class="slideshow-main">
-    <div id="loading-wrap">
-      <div id="loading">
-        <noscript>
-          Your browser doesn't support JavaScript, or you've got JavaScript disabled.
-          Please enable JavaScript or use one of <a href="http://browsehappy.com/">these browsers</a> to see this awesome website.
-        </noscript>
+        #loading > noscript {
+          font-size: 25px;
+          text-align: center;
+          margin-top: 190px;
+          display: block;
+        }
+      </style>
+    </noscript>
+  </head>
+  <body>
+    <!-- Center screen -->
+    <div id="center-screen" class="ms-container ms-default">
+      <!-- Header -->
+      <div id="header">
+        <a
+          href="javascript:void(0)"
+          class="ms-nav-link info1"
+          data-ms-target="left-screen"
+          data-ms-exit-animation="right"
+          data-ms-enter-animation="left"
+          >INFO</a
+        >
+        <a href="/" class="home1" id="homelink">YEUAYA</a>
+        <a
+          href="javascript:void(0)"
+          class="ms-nav-link contact1"
+          data-ms-target="right-screen"
+          data-ms-exit-animation="left"
+          data-ms-enter-animation="right"
+          >CONTACT</a
+        >
       </div>
-      <div id="showcase">
-        <img class="cloud9-item" src="gfx/work/1.jpg" width="250" height="250">
-        <img class="cloud9-item" src="gfx/work/2.jpg" width="250" height="250">
-        <img class="cloud9-item" src="gfx/work/3.jpg" width="250" height="250">
-        <img class="cloud9-item" src="gfx/work/4.jpg" width="250" height="250">
-        <img class="cloud9-item" src="gfx/work/5.jpg" width="200" height="250">
-        <img class="cloud9-item" src="gfx/work/1.jpg" width="250" height="250">
-        <img class="cloud9-item" src="gfx/work/2.jpg" width="250" height="250">
-        <img class="cloud9-item" src="gfx/work/3.jpg" width="250" height="250">
-       
+      <!-- Header end -->
+
+      <!-- Slideshow -->
+      <div id="gallery" class="slideshow-main">
+        <div id="loading-wrap">
+          <div id="loading">
+            <noscript>
+              Your browser doesn't support JavaScript, or you've got JavaScript
+              disabled. Please enable JavaScript or use one of
+              <a href="http://browsehappy.com/">these browsers</a> to see this
+              awesome website.
+            </noscript>
+          </div>
+          <div id="showcase">
+            <img
+              class="cloud9-item"
+              src="gfx/work/1.jpg"
+              width="250"
+              height="250"
+            />
+            <img
+              class="cloud9-item"
+              src="gfx/work/2.jpg"
+              width="250"
+              height="250"
+            />
+            <img
+              class="cloud9-item"
+              src="gfx/work/3.jpg"
+              width="250"
+              height="250"
+            />
+            <img
+              class="cloud9-item"
+              src="gfx/work/4.jpg"
+              width="250"
+              height="250"
+            />
+            <img
+              class="cloud9-item"
+              src="gfx/work/5.jpg"
+              width="200"
+              height="250"
+            />
+            <img
+              class="cloud9-item"
+              src="gfx/work/1.jpg"
+              width="250"
+              height="250"
+            />
+            <img
+              class="cloud9-item"
+              src="gfx/work/2.jpg"
+              width="250"
+              height="250"
+            />
+            <img
+              class="cloud9-item"
+              src="gfx/work/3.jpg"
+              width="250"
+              height="250"
+            />
+          </div>
+        </div>
+
+        <div id="loading-more"></div>
+        <div id="scrollbot"></div>
       </div>
-    </div>
-    
-   
-    <div id="loading-more"></div>
-    <div id="scrollbot"></div>
-  </div>
-  <!-- Slideshow -->
-  
+      <!-- Slideshow -->
 
-<!-- Container -->
-  <div id="scroll" class="container" >
-    <div class="child">
-<a  class="hover1" href="citygarden1/citygarden.html"  >
-  <img class="gallery-item" src="gfx/work/1.jpg">
-  <p class="alt-2">HEHEHE</p>
-  <p class="alt-3">HUYHUY</p>
-</a>
+      <!-- Container -->
+      <div id="scroll" class="container">
+        <div class="child">
+          <a class="hover1" href="citygarden1/citygarden.html">
+            <img class="gallery-item" src="gfx/work/1.jpg" />
+            <p class="alt-2">HEHEHE</p>
+            <p class="alt-3">HUYHUY</p>
+          </a>
 
-<a class="hover2" href="citygarden1/citygarden.html">
-  <img class="gallery-item"  src="gfx/work/2.jpg">
-  <p class="alt-2">HEHEHE</p>
-  <p class="alt-3">HUYHUY</p>
-</a>
+          <a class="hover2" href="citygarden1/citygarden.html">
+            <img class="gallery-item" src="gfx/work/2.jpg" />
+            <p class="alt-2">HEHEHE</p>
+            <p class="alt-3">HUYHUY</p>
+          </a>
 
-<a href="citygarden1/citygarden.html">
-  <img class="gallery-item"  src="gfx/work/3.jpg">
-</a>
+          <a href="citygarden1/citygarden.html">
+            <img class="gallery-item" src="gfx/work/3.jpg" />
+          </a>
 
-<a href="citygarden1/citygarden.html">
-  <img class="gallery-item" src="gfx/work/4.jpg">
-</a>
-  </div></div>
-  
-<div class="container">
-  <div class="child">
-<a href="citygarden1/citygarden.html">
-  <img class="gallery-item" src="gfx/work/5.jpg">
-</a>
+          <a href="citygarden1/citygarden.html">
+            <img class="gallery-item" src="gfx/work/4.jpg" />
+          </a>
+        </div>
+      </div>
 
-<a href="citygarden1/citygarden.html">
-  <img class="gallery-item"  src="gfx/work/1.jpg">
-</a>
+      <div class="container">
+        <div class="child">
+          <a href="citygarden1/citygarden.html">
+            <img class="gallery-item" src="gfx/work/5.jpg" />
+          </a>
 
-<a href="citygarden1/citygarden.html">
-  <img class="gallery-item"  src="gfx/work/2.jpg">
-</a>
+          <a href="citygarden1/citygarden.html">
+            <img class="gallery-item" src="gfx/work/1.jpg" />
+          </a>
 
-<a href="citygarden1/citygarden.html">
-  <img class="gallery-item"  src="gfx/work/3.jpg">
-</a>
-</div>
-</div>
+          <a href="citygarden1/citygarden.html">
+            <img class="gallery-item" src="gfx/work/2.jpg" />
+          </a>
 
-<div class="container">
-  <div class="child">
-<a href="citygarden1/citygarden.html">
-  <img class="gallery-item"  src="gfx/work/4.jpg">
-</a>
+          <a href="citygarden1/citygarden.html">
+            <img class="gallery-item" src="gfx/work/3.jpg" />
+          </a>
+        </div>
+      </div>
 
-<a href="citygarden1/citygarden.html">
-    <img class="gallery-item" src="gfx/work/5.jpg">
-</a>
+      <div class="container">
+        <div class="child">
+          <a href="citygarden1/citygarden.html">
+            <img class="gallery-item" src="gfx/work/4.jpg" />
+          </a>
 
-<a href="Example-one-Picture.html">
-  <img class="gallery-item" src="gfx/work/1.jpg">
-</a>
+          <a href="citygarden1/citygarden.html">
+            <img class="gallery-item" src="gfx/work/5.jpg" />
+          </a>
 
-<a class="nsbbox"href="index.html">
-  <img class="gallery-item" src="gfx/work/2.jpg">
-</a>
+          <a href="Example-one-Picture.html">
+            <img class="gallery-item" src="gfx/work/1.jpg" />
+          </a>
 
-</div>
-</div>
-<!-- Container -->
-  <!-- <footer>
+          <a class="nsbbox" href="index.html">
+            <img class="gallery-item" src="gfx/work/2.jpg" />
+          </a>
+        </div>
+      </div>
+      <!-- Container -->
+      <!-- <footer>
     <p id="expand">
       <button type="button">SEE ALL PROJECTS</button>
       
     </p>
   </footer> -->
-</div>
+    </div>
 
-<!-- Center screen end -->
+    <!-- Center screen end -->
 
-<!-- Contact screen -->
+    <!-- Contact screen -->
 
-  <div id="right-screen" class="ms-container">
-
-    <!-- Header -->
-    <div id="header-right">
-      <a href="javascript:void(0)" class="ms-nav-link info1" data-ms-target="left-screen" data-ms-exit-animation="right" data-ms-enter-animation="left" >INFO</a>
-      <a href="javascript:void(0)" class="ms-nav-link home1" data-ms-target="center-screen" data-ms-exit-animation="right" data-ms-enter-animation="left">YEUAYA</a>
-      <a href="javascript:void(0)" class="ms-nav-link contact1" data-ms-target="right-screen" data-ms-exit-animation="left" data-ms-enter-animation="right" >CONTACT</a>
+    <div id="right-screen" class="ms-container">
+      <!-- Header -->
+      <div id="header-right">
+        <a
+          href="javascript:void(0)"
+          class="ms-nav-link info1"
+          data-ms-target="left-screen"
+          data-ms-exit-animation="right"
+          data-ms-enter-animation="left"
+          >INFO</a
+        >
+        <a
+          href="javascript:void(0)"
+          class="ms-nav-link home1"
+          data-ms-target="center-screen"
+          data-ms-exit-animation="right"
+          data-ms-enter-animation="left"
+          >YEUAYA</a
+        >
+        <a
+          href="javascript:void(0)"
+          class="ms-nav-link contact1"
+          data-ms-target="right-screen"
+          data-ms-exit-animation="left"
+          data-ms-enter-animation="right"
+          >CONTACT</a
+        >
       </div>
 
       <!-- Header -->
-      
+
       <!-- Content -->
       <div id="contact">
         <a href="/">Instagram</a>
         <a href="/">Youtube</a>
         <a href="/">Mail</a>
+      </div>
+      <!-- Content -->
     </div>
-    <!-- Content -->
-    
-  </div>
-<!-- Contact screen end -->
+    <!-- Contact screen end -->
 
-<!-- Info screen -->
-  <div id="left-screen" class="ms-container">
-
-    <!-- Header -->
-    <div id="header-left">
-      <a href="javascript:void(0)" class="ms-nav-link info1" data-ms-target="left-screen" data-ms-exit-animation="right" data-ms-enter-animation="left" >INFO</a>
-      <a href="javascript:void(0)" class="ms-nav-link home1" data-ms-target="center-screen" data-ms-exit-animation="left" data-ms-enter-animation="right">YEUAYA</a>
-      <a href="javascript:void(0)" class="ms-nav-link contact1" data-ms-target="right-screen" data-ms-exit-animation="left" data-ms-enter-animation="right" >CONTACT</a>
+    <!-- Info screen -->
+    <div id="left-screen" class="ms-container">
+      <!-- Header -->
+      <div id="header-left">
+        <a
+          href="javascript:void(0)"
+          class="ms-nav-link info1"
+          data-ms-target="left-screen"
+          data-ms-exit-animation="right"
+          data-ms-enter-animation="left"
+          >INFO</a
+        >
+        <a
+          href="javascript:void(0)"
+          class="ms-nav-link home1"
+          data-ms-target="center-screen"
+          data-ms-exit-animation="left"
+          data-ms-enter-animation="right"
+          >YEUAYA</a
+        >
+        <a
+          href="javascript:void(0)"
+          class="ms-nav-link contact1"
+          data-ms-target="right-screen"
+          data-ms-exit-animation="left"
+          data-ms-enter-animation="right"
+          >CONTACT</a
+        >
       </div>
       <!-- Header -->
 
       <!-- Content -->
-    <div id="info-container">
+      <div id="info-container">
+        <h2 class="ner">YESUNZAYA</h2>
 
-      <h2 class="ner">
-        YESUNZAYA
-      </h2>
+        <a class="zurag"
+          ><img
+            src="gfx/art/does-what-s-inside-matter.jpg"
+            width="300"
+            height="300"
+            style="border-radius: 50%"
+        /></a>
 
-      <a class="zurag"><img src="gfx/art/does-what-s-inside-matter.jpg" width="300" height="300" style="border-radius: 50%;"></a>
+        <div class="bio">
+          <h5>Lorem Ipsum</h5>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris
+            hendrerit in diam sit amet congue. Curabitur vitae porttitor mauris.
+            Fusce ac porttitor lorem, eu rhoncus leo. Vestibulum lacus mi,
+            cursus vitae vehicula in, imperdiet eget purus. In pulvinar semper
+            neque, non consequat ipsum ornare sit amet. Ut blandit nibh
+            pellentesque rutrum molestie. Nam aliquet erat eget augue faucibus,
+            eu elementum arcu posuere. Fusce tincidunt eros vitae nisi euismod
+            ultrices. Class aptent taciti sociosqu ad litora torquent per
+            conubia nostra, per inceptos himenaeos. Proin aliquam lectus et
+            metus consectetur, vel vulputate est auctor. Integer mattis maximus
+            feugiat. Nunc condimentum semper rhoncus. Suspendisse viverra
+            consequat eros a sollicitudin.
+          </p>
+          <h5>Lorem Ipsum</h5>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris
+            hendrerit in diam sit amet congue. Curabitur vitae porttitor mauris.
+            Fusce ac porttitor lorem, eu rhoncus leo. Vestibulum lacus mi,
+            cursus vitae vehicula in, imperdiet eget purus. In pulvinar semper
+            neque, non consequat ipsum ornare sit amet. Ut blandit nibh
+            pellentesque rutrum molestie. Nam aliquet erat eget augue faucibus,
+            eu elementum arcu posuere. Fusce tincidunt eros vitae nisi euismod
+            ultrices. Class aptent taciti sociosqu ad litora torquent per
+            conubia nostra, per inceptos himenaeos. Proin aliquam lectus et
+            metus consectetur, vel vulputate est auctor. Integer mattis maximus
+            feugiat. Nunc condimentum semper rhoncus. Suspendisse viverra
+            consequat eros a sollicitudin.
+          </p>
 
-      <div class="bio">
-        <h5>Lorem Ipsum</h5>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris hendrerit in diam sit amet congue. Curabitur vitae porttitor mauris. Fusce ac porttitor lorem, eu rhoncus leo. Vestibulum lacus mi, cursus vitae vehicula in, imperdiet eget purus. In pulvinar semper neque, non consequat ipsum ornare sit amet. Ut blandit nibh pellentesque rutrum molestie. Nam aliquet erat eget augue faucibus, eu elementum arcu posuere. Fusce tincidunt eros vitae nisi euismod ultrices. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Proin aliquam lectus et metus consectetur, vel vulputate est auctor. Integer mattis maximus feugiat. Nunc condimentum semper rhoncus. Suspendisse viverra consequat eros a sollicitudin.</p>
-        <h5>Lorem Ipsum</h5>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris hendrerit in diam sit amet congue. Curabitur vitae porttitor mauris. Fusce ac porttitor lorem, eu rhoncus leo. Vestibulum lacus mi, cursus vitae vehicula in, imperdiet eget purus. In pulvinar semper neque, non consequat ipsum ornare sit amet. Ut blandit nibh pellentesque rutrum molestie. Nam aliquet erat eget augue faucibus, eu elementum arcu posuere. Fusce tincidunt eros vitae nisi euismod ultrices. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Proin aliquam lectus et metus consectetur, vel vulputate est auctor. Integer mattis maximus feugiat. Nunc condimentum semper rhoncus. Suspendisse viverra consequat eros a sollicitudin.</p>
-      
-      <h5>Lorem Ipsum</h5>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris hendrerit in diam sit amet congue. Curabitur vitae porttitor mauris. Fusce ac porttitor lorem, eu rhoncus leo. Vestibulum lacus mi, cursus vitae vehicula in, imperdiet eget purus. In pulvinar semper neque, non consequat ipsum ornare sit amet. Ut blandit nibh pellentesque rutrum molestie. Nam aliquet erat eget augue faucibus, eu elementum arcu posuere. Fusce tincidunt eros vitae nisi euismod ultrices. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Proin aliquam lectus et metus consectetur, vel vulputate est auctor. Integer mattis maximus feugiat. Nunc condimentum semper rhoncus. Suspendisse viverra consequat eros a sollicitudin.</p>
-      
-      <h5>Lorem Ipsum</h5>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris hendrerit in diam sit amet congue. Curabitur vitae porttitor mauris. Fusce ac porttitor lorem, eu rhoncus leo. Vestibulum lacus mi, cursus vitae vehicula in, imperdiet eget purus. In pulvinar semper neque, non consequat ipsum ornare sit amet. Ut blandit nibh pellentesque rutrum molestie. Nam aliquet erat eget augue faucibus, eu elementum arcu posuere. Fusce tincidunt eros vitae nisi euismod ultrices. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Proin aliquam lectus et metus consectetur, vel vulputate est auctor. Integer mattis maximus feugiat. Nunc condimentum semper rhoncus. Suspendisse viverra consequat eros a sollicitudin.</p>
-      
-      <h5>Lorem Ipsum</h5>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris hendrerit in diam sit amet congue. Curabitur vitae porttitor mauris. Fusce ac porttitor lorem, eu rhoncus leo. Vestibulum lacus mi, cursus vitae vehicula in, imperdiet eget purus. In pulvinar semper neque, non consequat ipsum ornare sit amet. Ut blandit nibh pellentesque rutrum molestie. Nam aliquet erat eget augue faucibus, eu elementum arcu posuere. Fusce tincidunt eros vitae nisi euismod ultrices. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Proin aliquam lectus et metus consectetur, vel vulputate est auctor. Integer mattis maximus feugiat. Nunc condimentum semper rhoncus. Suspendisse viverra consequat eros a sollicitudin.</p>
-      
+          <h5>Lorem Ipsum</h5>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris
+            hendrerit in diam sit amet congue. Curabitur vitae porttitor mauris.
+            Fusce ac porttitor lorem, eu rhoncus leo. Vestibulum lacus mi,
+            cursus vitae vehicula in, imperdiet eget purus. In pulvinar semper
+            neque, non consequat ipsum ornare sit amet. Ut blandit nibh
+            pellentesque rutrum molestie. Nam aliquet erat eget augue faucibus,
+            eu elementum arcu posuere. Fusce tincidunt eros vitae nisi euismod
+            ultrices. Class aptent taciti sociosqu ad litora torquent per
+            conubia nostra, per inceptos himenaeos. Proin aliquam lectus et
+            metus consectetur, vel vulputate est auctor. Integer mattis maximus
+            feugiat. Nunc condimentum semper rhoncus. Suspendisse viverra
+            consequat eros a sollicitudin.
+          </p>
+
+          <h5>Lorem Ipsum</h5>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris
+            hendrerit in diam sit amet congue. Curabitur vitae porttitor mauris.
+            Fusce ac porttitor lorem, eu rhoncus leo. Vestibulum lacus mi,
+            cursus vitae vehicula in, imperdiet eget purus. In pulvinar semper
+            neque, non consequat ipsum ornare sit amet. Ut blandit nibh
+            pellentesque rutrum molestie. Nam aliquet erat eget augue faucibus,
+            eu elementum arcu posuere. Fusce tincidunt eros vitae nisi euismod
+            ultrices. Class aptent taciti sociosqu ad litora torquent per
+            conubia nostra, per inceptos himenaeos. Proin aliquam lectus et
+            metus consectetur, vel vulputate est auctor. Integer mattis maximus
+            feugiat. Nunc condimentum semper rhoncus. Suspendisse viverra
+            consequat eros a sollicitudin.
+          </p>
+
+          <h5>Lorem Ipsum</h5>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris
+            hendrerit in diam sit amet congue. Curabitur vitae porttitor mauris.
+            Fusce ac porttitor lorem, eu rhoncus leo. Vestibulum lacus mi,
+            cursus vitae vehicula in, imperdiet eget purus. In pulvinar semper
+            neque, non consequat ipsum ornare sit amet. Ut blandit nibh
+            pellentesque rutrum molestie. Nam aliquet erat eget augue faucibus,
+            eu elementum arcu posuere. Fusce tincidunt eros vitae nisi euismod
+            ultrices. Class aptent taciti sociosqu ad litora torquent per
+            conubia nostra, per inceptos himenaeos. Proin aliquam lectus et
+            metus consectetur, vel vulputate est auctor. Integer mattis maximus
+            feugiat. Nunc condimentum semper rhoncus. Suspendisse viverra
+            consequat eros a sollicitudin.
+          </p>
+        </div>
       </div>
-      
-
+      <!-- Content -->
     </div>
-    <!-- Content -->
-  </div>
-  <!-- Info screen end -->
-  
-  <script src="js/lib/jquery.js"></script>
-  <script src="js/lib/jquery.reflection.js"></script>
-  <script src="js/lib/jquery.cloud9carousel.js"></script>
-  <script src="js/lib/jquery.event.move.js" async></script>
-  <script src="js/lib/jquery.event.swipe.js" async></script>
-  <script src="js/lib/jquery.fancybox.js"></script>
-  <script src="js/lib/jquery.qtip.js"></script>
-  <script src="js/site.js"></script>
-  
-  <!-- Scroll to first content element -->
-<script>
- $("#scrollbot").click(function() {
-    // When the element with ID "button" is clicked, execute the following function:
+    <!-- Info screen end -->
 
-    var offsetAboveTop = $("#scroll").offset().top + 250; // Adjust the value as needed
+    <script src="js/lib/jquery.js"></script>
+    <script src="js/lib/jquery.reflection.js"></script>
+    <script src="js/lib/jquery.cloud9carousel.js"></script>
+    <!-- <script src="js/lib/jquery.event.move.js" async></script>
+    <script src="js/lib/jquery.event.swipe.js" async></script>
+    <script src="js/lib/jquery.fancybox.js"></script>
+    <script src="js/lib/jquery.qtip.js"></script> -->
+    <script src="js/site.js"></script>
 
-    $('html, body').animate({
-        // Select both the HTML and body elements and perform an animation:
+    <!-- Scroll to first content element -->
+    <script>
+      $("#scrollbot").click(function () {
+        // When the element with ID "button" is clicked, execute the following function:
 
-        scrollTop: offsetAboveTop
-        // Scroll to a position above the top of the element with ID "myDiv."
-    }, 2000);
-    // The animation should take 2000 milliseconds (2 seconds) to complete.
-});
-</script>
- <!-- Scroll to first content element -->
- 
- <!-- Home Link -->
-<script>
-    var pathname = window.location.pathname;
-    document.getElementById('homelink').href = pathname;
-  </script>
+        var offsetAboveTop = $("#scroll").offset().top + 250; // Adjust the value as needed
 
-<!-- Home link -->
+        $("html, body").animate(
+          {
+            // Select both the HTML and body elements and perform an animation:
 
+            scrollTop: offsetAboveTop,
+            // Scroll to a position above the top of the element with ID "myDiv."
+          },
+          2000
+        );
+        // The animation should take 2000 milliseconds (2 seconds) to complete.
+      });
+    </script>
+    <!-- Scroll to first content element -->
 
+    <!-- Home Link -->
+    <script>
+      var pathname = window.location.pathname;
+      document.getElementById("homelink").href = pathname;
+    </script>
 
-</body>
+    <!-- Home link -->
+  </body>
 </html>

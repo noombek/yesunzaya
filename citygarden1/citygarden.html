@@ -1,88 +1,109 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/simple-lightbox.css" />
+  <head>
+    <meta charset="UTF-8" />
 
-  
- 
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/simple-lightbox.css" />
 
- 
-  <title>City Garden</title>
-</head>
-<body >
-
-  <!-- Header -->
+    <title>City Garden</title>
+  </head>
+  <body>
+    <!-- Header -->
     <div id="header">
-    <a href="javascript:history.back()" class="back_button">BACK</a>
+      <a href="javascript:history.back()" class="back_button">BACK</a>
 
-    <a href="#" onclick="goBack()" class="home1">YEUAYA</a>
+      <a href="#" onclick="goBack()" class="home1">YEUAYA</a>
 
-    <a href="#up" class="totop ">TOP</a>
-    
+      <a href="#up" class="totop">TOP</a>
     </div>
     <!-- Header end -->
 
-<h1>City Garden</h1>
+    <h1>City Garden</h1>
 
+    <div id="container">
+      <div class="content gallery">
+        <a href="images/Rectangle 135.png"
+          ><img
+            style="border-radius: 15px 15px 0 0"
+            src="images/Rectangle 135.png"
+            alt=""
+        /></a>
+        <a href="images/CITY GARDEN 2.png"
+          ><img src="images/CITY GARDEN 2.png"
+        /></a>
+        <a href="images/CITY GARDEN 3.png"
+          ><img src="images/CITY GARDEN 3.png"
+        /></a>
+        <a href="images/CITY GARDEN 4.png"
+          ><img src="images/CITY GARDEN 4.png"
+        /></a>
+        <a href="images/CITY GARDEN 5.png"
+          ><img src="images/CITY GARDEN 5.png"
+        /></a>
+        <a href="images/CITY GARDEN 6.png"
+          ><img src="images/CITY GARDEN 6.png"
+        /></a>
+        <a href="images/CITY GARDEN 7.png"
+          ><img src="images/CITY GARDEN 7.png"
+        /></a>
+        <a href="images/CITY GARDEN 8.png"
+          ><img src="images/CITY GARDEN 8.png"
+        /></a>
+        <a href="images/CITY GARDEN 9.png"
+          ><img src="images/CITY GARDEN 9.png"
+        /></a>
+        <a href="images/CITY GARDEN 10.png"
+          ><img src="images/CITY GARDEN 10.png"
+        /></a>
+        <a href="images/CITY GARDEN 11.png"
+          ><img src="images/CITY GARDEN 11.png"
+        /></a>
+        <a href="images/CITY GARDEN 12.png"
+          ><img src="images/CITY GARDEN 12.png"
+        /></a>
+        <a href="images/CITY GARDEN 13.png"
+          ><img src="images/CITY GARDEN 13.png"
+        /></a>
+        <a href="images/CITY GARDEN 14.png"
+          ><img src="images/CITY GARDEN 14.png"
+        /></a>
+        <a href="images/CITY GARDEN 15.png"
+          ><img src="images/CITY GARDEN 15.png"
+        /></a>
+        <a href="images/CITY GARDEN 16.png"
+          ><img src="images/CITY GARDEN 16.png"
+        /></a>
+        <a href="images/CITY GARDEN 17.png"
+          ><img src="images/CITY GARDEN 17.png"
+        /></a>
+        <a href="images/CITY GARDEN 18.png"
+          ><img src="images/CITY GARDEN 18.png"
+        /></a>
+      </div>
+    </div>
 
-  <div id="container">
-    
-    
-          <div class="content gallery">
-              <a href="images/Rectangle 135.png"><img style="border-radius: 15px 15px 0 0;" src="images/Rectangle 135.png" alt=""></a>
-              <a href="images/CITY GARDEN 2.png"><img src="images/CITY GARDEN 2.png"></a>
-              <a href="images/CITY GARDEN 3.png"><img src="images/CITY GARDEN 3.png"></a>
-              <a href="images/CITY GARDEN 4.png"><img src="images/CITY GARDEN 4.png"></a>
-              <a href="images/CITY GARDEN 5.png"><img src="images/CITY GARDEN 5.png"></a>
-              <a href="images/CITY GARDEN 6.png"><img src="images/CITY GARDEN 6.png"></a>
-              <a href="images/CITY GARDEN 7.png"><img src="images/CITY GARDEN 7.png"></a>
-              <a href="images/CITY GARDEN 8.png"><img src="images/CITY GARDEN 8.png"></a>
-              <a href="images/CITY GARDEN 9.png"><img src="images/CITY GARDEN 9.png"></a>
-              <a href="images/CITY GARDEN 10.png"><img src="images/CITY GARDEN 10.png"></a>
-              <a href="images/CITY GARDEN 11.png"><img src="images/CITY GARDEN 11.png"></a>
-              <a href="images/CITY GARDEN 12.png"><img src="images/CITY GARDEN 12.png"></a>
-              <a href="images/CITY GARDEN 13.png"><img src="images/CITY GARDEN 13.png"></a>
-              <a href="images/CITY GARDEN 14.png"><img src="images/CITY GARDEN 14.png"></a>
-              <a href="images/CITY GARDEN 15.png"><img src="images/CITY GARDEN 15.png"></a>
-              <a href="images/CITY GARDEN 16.png"><img src="images/CITY GARDEN 16.png"></a>
-              <a href="images/CITY GARDEN 17.png"><img src="images/CITY GARDEN 17.png"></a>
-              <a href="images/CITY GARDEN 18.png"><img src="images/CITY GARDEN 18.png"></a>
-          </div>
+    <!-- <script src="js/scripts.js"></script> -->
+    <script src="js/simplescrollup.js"></script>
 
+    <script src="js/simple-lightbox.js"></script>
+    <script>
+      (function () {
+        var $gallery = new SimpleLightbox(".gallery a", {});
+      })();
+    </script>
 
-</div>
-  
+    <!-- Home Link -->
+    <script>
+      function goBack() {
+        // Replace this with your custom logic for determining the previous URL
+        var previousUrl = document.referrer;
 
+        // Navigate to the previous URL
+        window.location.href = previousUrl;
+      }
+    </script>
 
-
-
-
-
-<script src="js/scripts.js"></script>
-<script src="js/simplescrollup.js"></script>
-
-<script src="js/simple-lightbox.js"></script>
-<script>
-    (function() {
-        var $gallery = new SimpleLightbox('.gallery a', {});
-    })();
-</script>
-
- <!-- Home Link -->
-  <script>
-  function goBack() {
-    // Replace this with your custom logic for determining the previous URL
-    var previousUrl = document.referrer;
-  
-    // Navigate to the previous URL
-    window.location.href = previousUrl;
-  }
-</script>
-
-<!-- Home link -->
-
-</body>
+    <!-- Home link -->
+  </body>
 </html>

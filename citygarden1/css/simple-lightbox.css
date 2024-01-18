@@ -43,7 +43,7 @@ body.hidden-scroll {
 .sl-wrapper .sl-close {
   display: none;
   position: fixed;
-  
+
   right: 70px;
   top: 40px;
   z-index: 10060;
@@ -100,10 +100,9 @@ body.hidden-scroll {
   display: block;
   z-index: 10060;
   font-family: Arial, Baskerville, monospace;
-  color:#616161;
+  color: #616161;
   visibility: hidden;
   background-color: rgba(114, 114, 114, 0);
-  
 }
 .sl-wrapper .sl-navigation button.sl-next {
   right: 0;
@@ -141,15 +140,15 @@ body.hidden-scroll {
 }
 
 @media screen and (min-width: 1200px) {
-  body .sl-caption{
+  body .sl-caption {
     padding: 10px;
   }
-  body .sl-wrapper .sl-navigation button{
+  body .sl-wrapper .sl-navigation button {
     visibility: visible;
   }
-  body .sl-wrapper .sl-close{
+  body .sl-wrapper .sl-close {
     right: 30px;
-  top: 20px;
+    top: 20px;
     font-size: 70px;
   }
 }
@@ -217,7 +216,6 @@ body.hidden-scroll {
   width: 100%;
   height: auto; /* To maintain the aspect ratio */
 }
-
 
 @-webkit-keyframes pulsate {
   0% {
