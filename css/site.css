@@ -262,14 +262,18 @@ body {
   -webkit-filter: brightness(50%);
   -moz-filter: brightness(50%);
   -ms-filter: brightness(50%);
-  filter: brightness(50%);
+  filter: brightness(50%) blur(0.8px);
+  transform: scale(0.98);
+  border-radius: 10px;
 }
 .gallery-item:hover {
   /*   */
   -webkit-filter: brightness(50%);
   -moz-filter: brightness(50%);
   -ms-filter: brightness(50%);
-  filter: brightness(50%);
+  filter: brightness(50%) blur(0.8px);
+  transform: scale(0.98);
+  border-radius: 10px;
 }
 /* --- Content hover */
 
@@ -383,7 +387,3 @@ body {
   top: 0;
 }
 /* --- Main page height */
-
-.child a:focus {
-  filter: blur(5px);
-}
