@@ -1,6 +1,3 @@
-/*
- * Code by Ildar Sagdejev ( http://www.tknomad.com )
- */
 console.log("JavaScript code is running");
 
 function iconAnimate(icon) {
