@@ -1029,7 +1029,13 @@
                         imageHeight /= ratio;
                       }
 
-                      _this5.domNodes.image.classList.add("centered-image"); // Image css
+                      _this5.domNodes.image.style.top = "45%"; // centered
+                      _this5.domNodes.image.style.left = "50%";
+                      _this5.domNodes.image.style.transform =
+                        "translate(-50%, -50%)";
+                      _this5.domNodes.image.style.width =
+                        imageWidth + 100 + "px";
+                      _this5.domNodes.image.style.height = imageHeight + "px";
 
                       _this5.domNodes.spinner.style.display = "none";
                       if (_this5.options.focus) {
@@ -2273,9 +2279,14 @@
                     if (!this.transitionCapable) {
                       return (this.domNodes.image.style.left = pos);
                     }
-                    // this.domNodes.image.style[this.transitionPrefix + 'transform'] = 'translateX(' + pos + ')';
-                    // this.domNodes.image.style[this.transitionPrefix + 'transition'] = this.transitionPrefix + 'transform ' + speed + 's linear';
-                    this.domNodes.image.classList.add("centered-image");
+                    // this.domNodes.image.style[
+                    //   this.transitionPrefix + "transform"
+                    // ] = "translateX(" + pos + ")";
+                    this.domNodes.image.style[
+                      this.transitionPrefix + "transition"
+                    ] =
+                      this.transitionPrefix + "transform " + speed + "s linear";
+                    // this.domNodes.image.classList.add("centered-image");
                   },
                 },
                 {

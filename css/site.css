@@ -264,7 +264,7 @@ body {
   -ms-filter: brightness(50%);
   filter: brightness(50%) blur(0.8px);
   transform: scale(0.98);
-  border-radius: 10px;
+  /* border-radius: 10px; */
 }
 .gallery-item:hover {
   /*   */
@@ -273,7 +273,7 @@ body {
   -ms-filter: brightness(50%);
   filter: brightness(50%) blur(0.8px);
   transform: scale(0.98);
-  border-radius: 10px;
+  /* border-radius: 10px; */
 }
 /* --- Content hover */
 

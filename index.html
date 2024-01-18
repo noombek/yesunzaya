@@ -7,7 +7,12 @@
     <meta property="og:image:height" content="627" />
     <link rel="image_src" href="gfx/work/2.jpg" />
     <title>YESUNZAYA</title>
-    <link rel="shortcut icon" href="gfx/favico.ico" type="image/x-icon" />
+    <link
+      rel="shortcut icon"
+      href="gfx/3.png"
+      type="image/x-icon"
+      id="faviconTag"
+    />
     <!-- <link rel="stylesheet" href="css/lib/jquery.fancybox.css" />
     <link rel="stylesheet" href="css/lib/jquery.qtip.css" /> -->
     <link rel="stylesheet" href="css/site.css" />
@@ -31,6 +36,20 @@
       src="https://code.jquery.com/jquery-latest.pack.js"
     ></script>
     <script type="text/javascript" src="js/multi-screen.js"></script>
+    <!-- Favicon tag change -->
+    <script>
+      const faviconTag = document.getElementById("faviconTag");
+      const isDark = window.matchMedia("(prefers-color-scheme: dark)");
+      const changeFavicon = () => {
+        if (isDark.matches) faviconTag.href = "gfx/2.png";
+        else faviconTag.href = "gfx/3.png";
+      };
+      changeFavicon();
+      setInterval(changeFavicon, 1000);
+    </script>
+    <!-- Favicon tag change -->
+
+    <!-- Multi Screen -->
     <script type="text/javascript">
       $(document).ready(function () {
         MultiScreen.init();
@@ -42,7 +61,9 @@
         });
       });
     </script>
+    <!-- Multi Screen -->
 
+    <!-- Scroll to decrease gallery opactiy -->
     <script>
       //         $(function(){
       //  //the shrinkHeader variable is where you tell the scroll effect to start.
@@ -76,7 +97,7 @@
       });
       // Scroll to decrease gallery opactiy
     </script>
-
+    <!-- Scroll to decrease gallery opactiy -->
     <noscript>
       <style>
         #loading {
@@ -188,7 +209,7 @@
       <div id="scroll" class="container">
         <div class="child">
           <a class="hover1" href="citygarden/citygarden.html">
-            <img class="gallery-item" src="gfx/work/1.jpg" />
+            <img class="gallery-item" src="gfx/work/1.gif" />
             <p class="alt-2">HEHEHE</p>
             <p class="alt-3">HUYHUY</p>
           </a>
