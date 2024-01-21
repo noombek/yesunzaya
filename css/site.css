@@ -52,10 +52,11 @@
   body #expand > button {
     font-size: 30px;
   }
-  body .child {
+  body .hover1 {
     flex-wrap: wrap;
     flex-direction: row;
     height: 65vh;
+    width: 50%;
   }
 
   #scrollbot {
@@ -66,10 +67,17 @@
     background-size: contain;
   }
   body .container {
-    height: 130vh;
+    flex-wrap: wrap;
+    flex-direction: row;
   }
   body .slideshow-main {
     height: 80.5vh;
+  }
+  body .alt-2,
+  body .alt-long,
+  body .alt-short {
+    width: 50%;
+    height: 65vh;
   }
 }
 /* --- Media screen only for desktop */
@@ -219,17 +227,13 @@ body {
 /* Container */
 
 .container {
-  position: sticky;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   width: 100%;
   height: 100%;
   /* max-height: 1920px; */
-
-  align-items: center;
-  justify-content: center;
 }
-.child {
+.hover1 {
   display: flex;
   width: 100%;
   height: 50%;
@@ -239,53 +243,25 @@ body {
   flex-direction: column;
   /* overflow: hidden; */
 }
-.child > a {
-  flex: 1 1 50%;
-  /* flex: 0 50%; */
-  /* flex: 1 0 auto; */
-  height: 100%;
-  width: 100%;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.child > a > img {
+.hover1 img {
   width: 100%;
   height: 100%;
 }
-
-/* Content hover */
-.hover1:hover .gallery-item,
-.hover2:hover .gallery-item {
-  /*   */
-  -webkit-filter: brightness(50%);
-  -moz-filter: brightness(50%);
-  -ms-filter: brightness(50%);
-  filter: brightness(50%) blur(0.8px);
-  transform: scale(0.98);
-  /* border-radius: 10px; */
-}
-.gallery-item:hover {
-  /*   */
-  -webkit-filter: brightness(50%);
-  -moz-filter: brightness(50%);
-  -ms-filter: brightness(50%);
-  filter: brightness(50%) blur(0.8px);
-  transform: scale(0.98);
-  /* border-radius: 10px; */
-}
-/* --- Content hover */
 
 /* Content desc */
 .alt-2 {
   position: absolute;
   opacity: 0;
   text-align: center;
-  width: 50%;
+  width: 100%;
+  height: 60rem;
   font-weight: 700;
   color: #eaeaea;
   font-size: 34px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .alt-3 {
   position: absolute;
@@ -297,39 +273,47 @@ body {
   color: #eaeaea;
   font-size: 24px;
 }
-/* .alt{
-      position: absolute;
-      opacity: 0;
-      text-align: center;
-      width: 50%;
-      color: #EAEAEA;
-      font-size: 34px;
-      line-height: 22px;
-      pointer-events: none;
-      
-    } */
-/* 
-    .gallery-item:hover + .alt
-     {
-      opacity: 1;
-      transition: opacity 0.5s linear;
-    } */
-
+.alt-long {
+  position: absolute;
+  opacity: 0;
+  text-align: center;
+  width: 100%;
+  height: 85rem;
+  font-weight: 700;
+  color: #eaeaea;
+  font-size: 34px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.alt-short {
+  position: absolute;
+  opacity: 0;
+  text-align: center;
+  width: 100%;
+  height: 35rem;
+  font-weight: 700;
+  color: #eaeaea;
+  font-size: 34px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 /* Content desc and content hover */
-.hover1:hover .alt-2 {
-  opacity: 1;
-  transition: opacity 0.5s linear;
-}
-.hover1:hover .alt-3 {
-  opacity: 1;
-  transition: opacity 0.5s linear;
-}
 
-.hover2:hover .alt-2 {
-  opacity: 1;
-  transition: opacity 0.5s linear;
+.hover1:hover .gallery-item {
+  /*   */
+  -webkit-filter: brightness(50%);
+  -moz-filter: brightness(50%);
+  -ms-filter: brightness(50%);
+  filter: brightness(50%) blur(0.8px);
+  transform: scale(0.98);
+  /* border-radius: 10px; */
 }
-.hover2:hover .alt-3 {
+.hover1:hover .alt-2,
+.hover1:hover .alt-3,
+.hover1:hover .alt-long,
+.hover1:hover .alt-short {
   opacity: 1;
   transition: opacity 0.5s linear;
 }
