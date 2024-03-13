@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta property="og:image" content="gfx/work/2.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="627" />
+
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/simple-lightbox.css" />
+
+    <title>TIMATEC</title>
+    <link
+      rel="shortcut icon"
+      href="../gfx/3.png"
+      type="image/x-icon"
+      id="faviconTag"
+    />
+    <!-- Favicon tag change -->
+    <script>
+      const faviconTag = document.getElementById("faviconTag");
+      const isDark = window.matchMedia("(prefers-color-scheme: dark)");
+      const changeFavicon = () => {
+        if (isDark.matches) faviconTag.href = "../gfx/2.png";
+        else faviconTag.href = "../gfx/3.png";
+      };
+      changeFavicon();
+      setInterval(changeFavicon, 1000);
+    </script>
+    <!-- Favicon tag change -->
+  </head>
+  <body>
+    <!-- Header -->
+    <div id="header">
+      <a href="javascript:history.back()" class="back_button">BACK</a>
+
+      <a href="https://noombek.github.io/yesunzaya/" class="home1">YEUAYA</a>
+
+      <a href="#up" class="totop">TOP</a>
+    </div>
+    <!-- Header end -->
+
+    <h1>TIMATEC</h1>
+
+    <div id="container">
+      <div class="content gallery">
+        <a href="images/TIMATEC_LOGO_USEGUIDELINE-01.png"
+          ><img src="images/TIMATEC_LOGO_USEGUIDELINE-01.png" alt="test"
+        /></a>
+        <a href="images/TIMATEC_LOGO_USEGUIDELINE-03.png"
+          ><img src="images/TIMATEC_LOGO_USEGUIDELINE-03.png"
+        /></a>
+        <a href="images/TIMATEC_LOGO_USEGUIDELINE-04.png"
+          ><img src="images/TIMATEC_LOGO_USEGUIDELINE-04.png"
+        /></a>
+        <a href="images/TIMATEC_LOGO_USEGUIDELINE-05.png"
+          ><img src="images/TIMATEC_LOGO_USEGUIDELINE-05.png"
+        /></a>
+        <a href="images/TIMATEC_LOGO_USEGUIDELINE-06.png"
+          ><img src="images/TIMATEC_LOGO_USEGUIDELINE-06.png"
+        /></a>
+        <a href="images/TIMATEC_LOGO_USEGUIDELINE-07.png"
+          ><img src="images/TIMATEC_LOGO_USEGUIDELINE-07.png"
+        /></a>
+        <a href="images/TIMATEC_LOGO_USEGUIDELINE-08.png"
+          ><img src="images/TIMATEC_LOGO_USEGUIDELINE-08.png"
+        /></a>
+        <a href="images/TIMATEC_LOGO_USEGUIDELINE-09.png"
+          ><img src="images/TIMATEC_LOGO_USEGUIDELINE-09.png"
+        /></a>
+        <a href="images/TIMATEC_LOGO_USEGUIDELINE-10.png"
+          ><img src="images/TIMATEC_LOGO_USEGUIDELINE-10.png"
+        /></a>
+        <a href="images/TIMATEC_LOGO_USEGUIDELINE-11.png"
+          ><img src="images/TIMATEC_LOGO_USEGUIDELINE-11.png"
+        /></a>
+        <a href="images/TIMATEC_LOGO_USEGUIDELINE-12.png"
+          ><img src="images/TIMATEC_LOGO_USEGUIDELINE-12.png"
+        /></a>
+        <a href="images/TIMATEC_LOGO_USEGUIDELINE-13.png"
+          ><img src="images/TIMATEC_LOGO_USEGUIDELINE-13.png"
+        /></a>
+      </div>
+    </div>
+
+    <!-- <script src="js/scripts.js"></script> -->
+    <script src="js/simplescrollup.js"></script>
+
+    <script src="js/simple-lightbox.js"></script>
+    <script>
+      (function () {
+        var $gallery = new SimpleLightbox(".gallery a", {});
+      })();
+    </script>
+
+    <!-- Home Link -->
+    <script>
+      function goBack() {
+        // Replace this with your custom logic for determining the previous URL
+        var previousUrl = document.referrer;
+
+        // Navigate to the previous URL
+        window.location.href = previousUrl;
+      }
+    </script>
+
+    <!-- Home link -->
+  </body>
+</html>
