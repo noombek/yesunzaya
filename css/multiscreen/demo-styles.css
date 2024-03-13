@@ -68,6 +68,9 @@ body {
   align-items: center;
   letter-spacing: 4px;
 }
+#contact > a:hover {
+  color: #84dddc;
+}
 
 a:visited {
   color: #000000;

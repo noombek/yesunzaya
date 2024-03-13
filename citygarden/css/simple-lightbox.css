@@ -100,7 +100,7 @@ body.hidden-scroll {
   display: block;
   z-index: 10060;
   font-family: Arial, Baskerville, monospace;
-  color: #616161;
+  color: azure;
   visibility: hidden;
   background-color: rgba(114, 114, 114, 0);
 }

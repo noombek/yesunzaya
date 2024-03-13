@@ -17,6 +17,9 @@
   body .back_button {
     font-size: 25px;
   }
+  body #desc {
+    width: 50%;
+  }
 }
 
 body {
@@ -58,9 +61,17 @@ body::-webkit-scrollbar-thumb {
 h1 {
   font-size: 105px;
   padding-top: 5%;
-  padding-bottom: 5%;
   text-align: center;
   color: azure;
+}
+#desc {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  padding-bottom: 5%;
+  color: azure;
+  text-align: center;
 }
 #container {
   display: flex;
